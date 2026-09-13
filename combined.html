@@ -1,0 +1,3327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verified Digital Medical History Platform</title>
+  <style>
+/* ===================================================================
+   VERIFIED DIGITAL MEDICAL HISTORY PLATFORM
+   Accessible, Elder-Friendly Healthcare CSS
+   =================================================================== */
+
+:root {
+  --primary: #0284c7;        /* Calming Medical Sky Blue */
+  --primary-hover: #0369a1;
+  --primary-dark: #075985;
+  --teal: #0d9488;           /* Trustworthy Medical Teal */
+  --teal-hover: #0f766e;
+  --bg-main: #f8fafc;        /* Soft neutral calm background */
+  --bg-card: #ffffff;
+  --text-main: #0f172a;      /* High contrast slate */
+  --text-muted: #334155;
+  --border-color: #cbd5e1;
+  --verified-color: #15803d; /* Doctor Verified Green */
+  --verified-bg: #dcfce7;
+  --ai-color: #6b21a8;       /* AI Generated Purple */
+  --ai-bg: #f3e8ff;
+  --doc-color: #b45309;      /* Document Extracted Amber */
+  --doc-bg: #fef3c7;
+  --patient-color: #1d4ed8;  /* Patient Reported Blue */
+  --patient-bg: #dbeafe;
+  --emergency-color: #b91c1c;/* Emergency Alert Red */
+  --emergency-bg: #fee2e2;
+  --font-base: 18px;         /* Elder-friendly readable baseline */
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+  --bg-main: #000000;
+  --bg-card: #121212;
+  --text-main: #ffffff;
+  --text-muted: #e2e8f0;
+  --border-color: #ffffff;
+  --primary: #38bdf8;
+  --teal: #2dd4bf;
+  --verified-bg: #14532d;
+  --verified-color: #86efac;
+  --ai-bg: #581c87;
+  --ai-color: #e9d5ff;
+  --doc-bg: #78350f;
+  --doc-color: #fde68a;
+  --patient-bg: #1e3a8a;
+  --patient-color: #bfdbfe;
+  --emergency-bg: #7f1d1d;
+  --emergency-color: #fca5a5;
+  --shadow: 0 0 0 2px #ffffff;
+}
+
+/* Font scale classes */
+body.font-large {
+  --font-base: 22px;
+}
+body.font-xlarge {
+  --font-base: 26px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: var(--font-base);
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ================= TOP BRAND / ACCESSIBILITY CONTROLS ================= */
+.top-brand-bar {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.top-brand-bar .logo-container {
+  margin: 0;
+}
+
+.top-brand-bar .logo-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.a11y-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.a11y-btn {
+  background: #334155;
+  color: #ffffff;
+  border: 1px solid #64748b;
+  padding: 7px 14px;
+  border-radius: 7px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.a11y-btn:hover { background: #475569; }
+
+/* ================= APP HEADER ================= */
+.app-header {
+  background: var(--bg-card);
+  border-bottom: 2px solid var(--border-color);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.logo-container { display:flex; align-items:center; gap:12px; cursor:pointer; }
+.logo-icon { font-size:2rem; background:#e0f2fe; color:var(--primary); width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:10px; }
+.logo-text h1 { font-size:1.35rem; font-weight:800; color:var(--primary-dark); }
+.logo-text span { font-size:0.85rem; color:var(--text-muted); font-weight:600; }
+.header-actions { display:flex; align-items:center; gap:12px; }
+
+/* ================= MAIN CONTAINER ================= */
+.main-container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  min-height: 52px;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-teal {
+  background-color: var(--teal);
+  color: #ffffff;
+}
+.btn-teal:hover {
+  background-color: var(--teal-hover);
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+.btn-large {
+  font-size: 1.25rem;
+  padding: 20px 32px;
+  min-height: 70px;
+}
+
+/* Navigation bar for views */
+.view-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ================= CARD ================= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* ================= BADGES & PROVENANCE ================= */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge-doctor-verified {
+  background-color: var(--verified-bg);
+  color: var(--verified-color);
+  border: 1px solid var(--verified-color);
+}
+
+.badge-ai-generated {
+  background-color: var(--ai-bg);
+  color: var(--ai-color);
+  border: 1px solid var(--ai-color);
+}
+
+.badge-document-extracted {
+  background-color: var(--doc-bg);
+  color: var(--doc-color);
+  border: 1px solid var(--doc-color);
+}
+
+.badge-patient-reported {
+  background-color: var(--patient-bg);
+  color: var(--patient-color);
+  border: 1px solid var(--patient-color);
+}
+
+/* ================= EMERGENCY BANNER ================= */
+.emergency-banner {
+  background-color: var(--emergency-bg);
+  color: var(--emergency-color);
+  border: 2px solid var(--emergency-color);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-weight: 600;
+}
+.emergency-banner .icon {
+  font-size: 1.8rem;
+}
+
+/* ================= ROLE SELECTOR (LANDING) ================= */
+.role-select-box {
+  text-align: center;
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 36px 24px;
+}
+
+.role-select-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.role-select-box p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.role-card-btn {
+  background: var(--bg-card);
+  border: 3px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 32px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  color: var(--text-main);
+  box-shadow: var(--shadow);
+}
+
+.role-card-btn:hover {
+  background: #f0f9ff;
+  transform: translateY(-4px);
+  border-color: var(--primary-dark);
+}
+
+.role-card-btn .role-icon {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.role-card-btn .role-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+/* ================= PATIENT DASHBOARD 4 LARGE BUTTONS ================= */
+.patient-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+@media (max-width: 700px) {
+  .patient-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-action-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-action-card:hover {
+  border-color: var(--primary);
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.dashboard-action-card .card-icon {
+  font-size: 2.8rem;
+  min-width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0f2fe;
+  color: var(--primary);
+}
+
+.dashboard-action-card.teal .card-icon {
+  background: #ccfbf1;
+  color: var(--teal);
+}
+
+.dashboard-action-card.purple .card-icon {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+.dashboard-action-card.amber .card-icon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.dashboard-action-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text-main);
+}
+
+.dashboard-action-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ================= CHAT CONTAINER ================= */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 620px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.chat-header-bar {
+  padding: 14px 20px;
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #fafafa;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 16px 20px;
+  border-radius: 16px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  position: relative;
+  word-break: break-word;
+}
+
+.chat-bubble.patient {
+  align-self: flex-end;
+  background-color: var(--primary);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.ai {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.chat-bubble.system {
+  align-self: center;
+  background-color: var(--emergency-bg);
+  color: var(--emergency-color);
+  border: 1px solid var(--emergency-color);
+  max-width: 90%;
+  text-align: center;
+  font-weight: 700;
+}
+
+.chat-bubble .read-aloud-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.chat-controls {
+  padding: 16px 20px;
+  background: #ffffff;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 16px;
+  font-size: 1.1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  outline: none;
+  font-family: inherit;
+}
+
+.chat-input:focus {
+  border-color: var(--primary);
+}
+
+.mic-btn {
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0 20px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-height: 54px;
+}
+
+.mic-btn.listening {
+  background-color: #15803d;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.chat-secondary-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 28px;
+  border-left: 3px solid var(--border-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -37px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--border-color);
+}
+
+.timeline-dot.verified {
+  background: var(--verified-color);
+}
+
+/* ================= DOCTOR DASHBOARD TABS ================= */
+.tabs-header {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  border-bottom: 4px solid transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ================= FORM INPUTS ================= */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1.05rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  font-family: inherit;
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Toast Message */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+}
+
+
+/* ================= RESPONSIVE LAYOUT ================= */
+html, body { width: 100%; overflow-x: hidden; }
+img, canvas, video { max-width: 100%; height: auto; }
+button, input, select, textarea { max-width: 100%; }
+.responsive-grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.appointment-filter-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.doctor-auth-tabs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+@media (max-width: 900px) {
+  .main-container { max-width: 100%; margin: 16px auto; padding: 0 12px; }
+  .app-header { padding: 12px 14px; }
+  .header-actions { gap: 6px; }
+  .header-actions .btn { min-height:44px; padding:10px 14px; font-size:.95rem; }
+  .logo-text h1 { font-size:1.15rem; }
+  .logo-text span { font-size:.72rem; }
+  .card { padding:18px; }
+  .view-nav { gap:12px; }
+  .chat-window { height: min(72vh, 620px); }
+}
+@media (max-width: 700px) {
+  body { font-size:16px; }
+  .top-brand-bar { padding:8px 10px; justify-content:center; }
+  .top-brand-bar .a11y-group { justify-content:center; gap:6px; }
+  .a11y-btn { padding:6px 9px; font-size:.82rem; }
+  .app-header { align-items:flex-start; flex-wrap:wrap; }
+  .header-actions { width:100%; justify-content:flex-end; }
+  .main-container { margin:10px auto; padding:0 8px; }
+  .card { padding:14px; border-radius:10px; }
+  .view-nav { flex-direction:column; align-items:stretch; }
+  .view-nav > h2 { font-size:1.25rem !important; text-align:center; }
+  .view-nav > .btn { width:100%; }
+  .responsive-grid-2, .appointment-filter-grid { grid-template-columns:1fr; }
+  .role-select-box { margin:12px auto; padding:20px 12px; }
+  .role-grid { gap:12px; }
+  .role-card-btn { padding:22px 14px; }
+  .dashboard-action-card { padding:18px 14px; gap:12px; }
+  .dashboard-action-card .card-icon { min-width:52px; width:52px; height:52px; font-size:2.1rem; }
+  .chat-window { height: calc(100vh - 210px); min-height:500px; }
+  .chat-header-bar { padding:10px; }
+  .chat-messages { padding:12px; gap:10px; }
+  .chat-bubble { max-width:92%; padding:12px 14px; font-size:1rem; }
+  .chat-input-row { flex-direction:column; }
+  .chat-input-row .chat-input, .chat-input-row .mic-btn, .chat-input-row .btn { width:100%; }
+  .mic-btn { min-height:52px; justify-content:center; padding:12px 16px; }
+  .chat-secondary-actions { flex-direction:column; align-items:stretch; }
+  .chat-secondary-actions > * { width:100%; }
+  .doctor-auth-tabs { grid-template-columns:1fr; }
+  .toast-notice { left:10px; right:10px; bottom:12px; text-align:center; }
+}
+@media (max-width: 430px) {
+  .logo-container { gap:7px; }
+  .logo-icon { width:40px; height:40px; font-size:1.6rem; }
+  .logo-text h1 { font-size:1rem; }
+  .logo-text span { display:none; }
+  .top-brand-bar .a11y-btn { padding:6px 9px; font-size:.82rem; }
+  .header-actions .btn { flex:1; }
+  .btn { width:100%; padding:12px 14px; }
+  .btn-large { min-height:58px; padding:14px 16px; font-size:1.05rem; }
+  .site-language-start select { width:100% !important; min-width:0 !important; }
+  .form-control { font-size:1rem; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- TOP BRAND BAR: LOGO USES THE FORMER ACCESSIBILITY SPACE -->
+  <div class="top-brand-bar">
+    <div class="logo-container" onclick="navigateHome()" aria-label="Medikiosk home">
+      <div class="logo-icon" aria-hidden="true">🩺</div>
+      <div class="logo-text">
+        <h1>Medikiosk</h1>
+        <span>Verified Digital Medical Records</span>
+      </div>
+    </div>
+    <div class="a11y-group" role="region" aria-label="Accessibility controls">
+      <button class="a11y-btn" onclick="toggleHighContrast()" id="hc-toggle-btn" title="Toggle High Contrast">🌓 High Contrast</button>
+      <button class="a11y-btn" onclick="toggleVoiceAssistance()" id="voice-assist-btn" title="Voice assistance status">🔊 Voice Output: ON</button>
+    </div>
+  </div>
+
+  <!-- MAIN APP HEADER -->
+  <header class="app-header">
+    <div class="header-actions" id="user-header-nav" style="display: none;">
+      <span id="header-user-badge" style="font-weight: 700; color: var(--primary-dark);"></span>
+      <button class="btn btn-secondary" onclick="navigateHome()">🏠 Home</button>
+      <button class="btn btn-secondary" onclick="handleLogout()">🚪 Log Out</button>
+    </div>
+  </header>
+
+  <!-- NOTIFICATION TOAST -->
+  <div id="toast" class="toast-notice" role="status" aria-live="polite"></div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-container">
+
+    <!-- ================= 1. ROLE SELECTOR / LANDING VIEW ================= -->
+    <section id="view-landing" class="role-select-box card">
+      <div class="site-language-start" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:22px;padding:12px 16px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;">
+        <label for="site-language-select" style="font-weight:800;font-size:1.05rem;">🌐 <span id="site-language-label">Language</span></label>
+        <select id="site-language-select" class="form-control" style="width:auto;min-width:230px;padding:10px 14px;" onchange="changeSiteLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="hi">हिंदी (Hindi)</option>
+          <option value="te">తెలుగు (Telugu)</option>
+          <option value="ta">தமிழ் (Tamil)</option>
+          <option value="kn">ಕನ್ನಡ (Kannada)</option>
+          <option value="ml">മലയാളം (Malayalam)</option>
+          <option value="mr">मराठी (Marathi)</option>
+          <option value="bn">বাংলা (Bengali)</option>
+          <option value="gu">ગુજરાતી (Gujarati)</option>
+          <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+          <option value="ur">اردو (Urdu)</option>
+        </select>
+        <span id="site-language-help" style="font-size:.9rem;color:var(--text-muted);">Choose the language you are most comfortable with</span>
+      </div>
+      <h2 id="landing-title">Welcome to Medikiosk</h2>
+      <p id="landing-subtitle">Please select your account type to proceed</p>
+      
+      <div class="role-grid">
+        <button class="role-card-btn" onclick="showPatientAuth()" id="landing-patient-btn" aria-label="Patient Portal">
+          <span class="role-icon">👤</span>
+          <span class="role-title" id="landing-patient-title">PATIENT</span>
+          <span style="font-size: 0.95rem; color: var(--text-muted); margin-top: 6px; display: block;">
+            Talk to AI assistant, upload medical reports, and track verified health history
+          </span>
+        </button>
+
+        <button class="role-card-btn" onclick="showDoctorAuth()" id="landing-doctor-btn" aria-label="Doctor Portal">
+          <span class="role-icon">👨‍⚕️</span>
+          <span class="role-title" id="landing-doctor-title">DOCTOR</span>
+          <span style="font-size: 0.95rem; color: var(--text-muted); margin-top: 6px; display: block;">
+            Review patient overviews, manage appointments, and verify clinical records
+          </span>
+        </button>
+      </div>
+
+      <div id="landing-footer" style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border-color); font-size: 0.95rem; color: var(--text-muted);">
+        🔒 Powered by My Pre-Consultation Bot &bull; All verified clinical entries are doctor-confirmed
+      </div>
+    </section>
+
+    <!-- ================= 2. PATIENT AUTH (LOGIN / SIGN UP / RECOVER) ================= -->
+    <section id="view-patient-auth" class="card" style="max-width: 580px; margin: 20px auto; display: none;">
+      <div class="view-nav">
+        <button id="patient-auth-back" class="btn btn-secondary" onclick="showView('view-landing')">← Back</button>
+        <h2 id="patient-auth-title" style="font-size: 1.4rem;">Patient Login</h2>
+      </div>
+
+          <div id="patient-auth-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <button class="btn btn-secondary" id="tab-patient-login" style="flex: 1;" onclick="setPatientAuthMode('login')">Log In</button>
+        <button class="btn btn-secondary" id="tab-patient-signup" style="flex: 1;" onclick="setPatientAuthMode('signup')">Sign Up</button>
+        <button class="btn btn-secondary" id="tab-patient-recover" style="flex: 1;" onclick="setPatientAuthMode('recover')">Help / Recover</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="form-patient-login" autocomplete="off" onsubmit="handlePatientLogin(event)">
+        <div class="form-group">
+          <label for="patient-email">Email Address</label>
+          <input type="email" id="patient-email" class="form-control" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="patient-password">Password</label>
+          <input type="password" id="patient-password" class="form-control" autocomplete="off" spellcheck="false" placeholder="••••••••" required>
+          <small style="color:var(--text-muted);">Password is masked and is never stored as plain text.</small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+          🔐 Log In as Patient
+        </button>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="form-patient-signup" style="display: none;" autocomplete="off" onsubmit="handlePatientSignup(event)">
+        <div class="form-group">
+          <label for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" class="form-control" placeholder="e.g. Ramesh Patel" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email Address</label>
+          <input type="email" id="signup-email" class="form-control" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Create Password</label>
+          <input type="password" id="signup-password" class="form-control" autocomplete="off" spellcheck="false" placeholder="At least 8 characters" minlength="8" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-phone">Phone Number</label>
+          <input type="tel" id="signup-phone" class="form-control" placeholder="+91 98765 43210">
+        </div>
+        <div class="form-group">
+          <label for="signup-dob">Date of Birth</label>
+          <input type="date" id="signup-dob" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="signup-blood">Blood Group</label>
+          <select id="signup-blood" class="form-control">
+            <option value="Unknown">Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-teal btn-large" style="width: 100%;">
+          ✨ Create Patient Account
+        </button>
+      </form>
+
+      <!-- Recover Form -->
+      <form id="form-patient-recover" style="display: none;" autocomplete="off" onsubmit="handlePatientRecover(event)">
+        <p style="margin-bottom: 16px; color: var(--text-muted);">
+          Enter your registered email address and we will assist with your account recovery.
+        </p>
+        <div class="form-group">
+          <label for="recover-email">Registered Email</label>
+          <input type="email" id="recover-email" class="form-control" placeholder="name@example.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+          📩 Send Recovery Details
+        </button>
+      </form>
+    </section>
+
+    <!-- ================= 3. DOCTOR AUTH (SECURE LOGIN / AI-VERIFIED SIGNUP) ================= -->
+    <section id="view-doctor-auth" class="card" style="max-width: 680px; margin: 20px auto; display: none;">
+      <div class="view-nav">
+        <button class="btn btn-secondary" onclick="showView('view-landing')">← Back</button>
+        <h2 style="font-size: 1.4rem;">Doctor Secure Portal</h2>
+      </div>
+
+      <div class="doctor-auth-tabs">
+        <button class="btn btn-primary" id="tab-doctor-login" onclick="setDoctorAuthMode('login')">🩺 Doctor Log In</button>
+        <button class="btn btn-secondary" id="tab-doctor-signup" onclick="setDoctorAuthMode('signup')">➕ Doctor Sign Up</button>
+      </div>
+
+      <form id="form-doctor-login" autocomplete="off" onsubmit="handleDoctorLogin(event)">
+        <div class="form-group">
+          <label for="doctor-email">Doctor Email</label>
+          <input type="email" id="doctor-email" class="form-control" placeholder="doctor@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="doctor-password">Password</label>
+          <input type="password" id="doctor-password" class="form-control" autocomplete="off" spellcheck="false" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-teal btn-large" style="width: 100%;">🩺 Secure Doctor Log In</button>
+        <p style="margin-top:12px;color:var(--text-muted);font-size:.92rem;">Only AI-verified doctor accounts can log in. Existing demo doctors remain available.</p>
+      </form>
+
+      <form id="form-doctor-signup" style="display:none;" autocomplete="off" onsubmit="handleDoctorSignup(event)">
+        <div class="emergency-banner" style="background:#eff6ff;color:#075985;border-color:#0284c7;">
+          <span class="icon">🤖</span>
+          <div><strong>Strict AI credential screening</strong><br><span style="font-weight:500;">Your medical ID/registration card is checked by the AI before a doctor account is created. Unclear, mismatched, suspicious, or low-confidence documents are rejected automatically.</span></div>
+        </div>
+        <div class="responsive-grid-2">
+          <div class="form-group">
+            <label for="doctor-signup-name">Full Name *</label>
+            <input type="text" id="doctor-signup-name" class="form-control" placeholder="Dr. Full Name" required>
+          </div>
+          <div class="form-group">
+            <label for="doctor-signup-email">Email *</label>
+            <input type="email" id="doctor-signup-email" class="form-control" placeholder="doctor@example.com" required>
+          </div>
+        </div>
+        <div class="responsive-grid-2">
+          <div class="form-group">
+            <label for="doctor-signup-password">Create Password *</label>
+            <input type="password" id="doctor-signup-password" class="form-control" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required>
+          </div>
+          <div class="form-group">
+            <label for="doctor-signup-registration">Medical Registration No. *</label>
+            <input type="text" id="doctor-signup-registration" class="form-control" placeholder="Registration number printed on card" required>
+          </div>
+        </div>
+        <div class="responsive-grid-2">
+          <div class="form-group">
+            <label for="doctor-signup-specialization">Specialization</label>
+            <select id="doctor-signup-specialization" class="form-control">
+              <option>General Medicine</option><option>Cardiology</option><option>Neurosurgery</option><option>Orthopedic Surgery</option><option>Dermatology / Skin</option><option>ENT</option><option>Pulmonology</option><option>Urology</option><option>Gynecology</option><option>Ophthalmology</option><option>Pediatrics</option><option>General Surgery</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="doctor-signup-hospital">Hospital / Clinic</label>
+            <select id="doctor-signup-hospital" class="form-control">
+              <option>Medicover Hospitals</option><option>Times Hospital</option><option>Srinivasa Hospital</option><option>Amrutha Hospital</option><option>Independent / Not specified</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="doctor-medical-id-card">Medical ID / Registration Card *</label>
+          <input type="file" id="doctor-medical-id-card" class="form-control" accept="image/png,image/jpeg,image/webp,application/pdf" required>
+          <small style="color:var(--text-muted);">Upload a clear card image/PDF where the name and registration number are readable. Maximum 10 MB.</small>
+        </div>
+        <button type="submit" class="btn btn-teal btn-large" style="width:100%;" id="doctor-signup-submit">🤖 Verify Card & Create Doctor Account</button>
+        <p style="margin-top:12px;color:var(--text-muted);font-size:.88rem;">AI screening is strict, but it does not query a government/licensing registry. Do not describe this as legal license verification.</p>
+      </form>
+    </section>
+
+    <!-- ================= 4. PATIENT DASHBOARD ================= -->
+    <section id="view-patient-dashboard" style="display: none;">
+      <!-- Welcome Header -->
+      <div class="card" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-color: #bae6fd;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 id="patient-greeting" style="font-size: 1.8rem; color: var(--primary-dark);">Welcome, Ramesh Patel</h2>
+            <p id="dashboard-subtitle" style="color: var(--text-muted); font-size: 1.05rem;">
+              Your verified health record hub. Everything is encrypted and doctor-audited.
+            </p>
+          </div>
+          <div>
+            <span class="badge badge-doctor-verified" id="badge-verified-records-count" style="font-size: 1rem; padding: 8px 16px;">
+              ✓ 3 DOCTOR VERIFIED RECORDS
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Appointment Highlight -->
+      <div id="dashboard-appointment-card" class="card" style="border-left: 6px solid var(--primary);">
+        <!-- Loaded dynamically -->
+      </div>
+
+      <!-- 4 MAJOR ACCESSIBLE ACTION BUTTONS -->
+      <div class="patient-dashboard-grid">
+        <!-- 1. TALK TO AI -->
+        <button class="dashboard-action-card" onclick="openAIChat()">
+          <div class="card-icon" aria-hidden="true">💬</div>
+          <div>
+            <h3 id="dash-ai-title">TALK TO AI</h3>
+            <p id="dash-ai-desc">Describe symptoms, speak in regional language & organize your medical intake</p>
+          </div>
+        </button>
+
+        <!-- 2. MY MEDICAL HISTORY -->
+        <button class="dashboard-action-card teal" onclick="openMedicalHistory()">
+          <div class="card-icon" aria-hidden="true">📋</div>
+          <div>
+            <h3 id="dash-history-title">MY MEDICAL HISTORY</h3>
+            <p id="dash-history-desc">View verified clinical timeline, prescriptions & hospital reports</p>
+          </div>
+        </button>
+
+        <!-- 3. MY DOCUMENTS -->
+        <button class="dashboard-action-card amber" onclick="openDocuments()">
+          <div class="card-icon" aria-hidden="true">📁</div>
+          <div>
+            <h3 id="dash-docs-title">MY DOCUMENTS</h3>
+            <p id="dash-docs-desc">Upload blood tests, scan reports, and prescriptions for AI extraction</p>
+          </div>
+        </button>
+
+        <!-- 4. APPOINTMENTS -->
+        <button class="dashboard-action-card purple" onclick="openAppointments()">
+          <div class="card-icon" aria-hidden="true">📅</div>
+          <div>
+            <h3 id="dash-appt-title">APPOINTMENTS</h3>
+            <p id="dash-appt-desc">Book consultation, choose doctor, and track appointment status</p>
+          </div>
+        </button>
+      </div>
+
+      <!-- Information Safety Notice -->
+      <div class="card" style="background: #f8fafc; font-size: 0.95rem; color: var(--text-muted);">
+        <strong>📌 Important Medical Safety Principle:</strong>
+        The AI assistant helps you organize and summarize your symptoms for your doctor. The AI is <em>not</em> a doctor and does <em>not</em> diagnose diseases. Only licensed healthcare professionals can verify your medical records.
+      </div>
+    </section>
+
+    <!-- ================= 5. AI CHATBOT INTAKE ================= -->
+    <section id="view-ai-chat" style="display: none;">
+      <div class="view-nav">
+        <button id="chat-back-btn" class="btn btn-secondary" onclick="showView('view-patient-dashboard')">← Back to Dashboard</button>
+        <h2 id="chat-title" style="font-size: 1.4rem;">AI Medical Intake Assistant</h2>
+        <button id="chat-overview-btn" class="btn btn-teal" onclick="generateStructuredOverview()">✨ Generate Structured Overview</button>
+      </div>
+
+      <!-- Emergency Warning Alert (Shown if serious keywords detected) -->
+      <div id="chat-emergency-banner" class="emergency-banner" style="display: none;">
+        <span class="icon">🚨</span>
+        <div>
+          <h4 style="font-size: 1.2rem; margin-bottom: 4px;">URGENT MEDICAL SAFETY NOTICE</h4>
+          <p>
+            You described symptoms that may require urgent professional care (e.g., chest pain, breathing difficulty).
+            <strong>Please do not rely on this chat. Call emergency medical services (108 or 911) or visit the nearest hospital immediately!</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Appointment type choice shown before the patient starts/reopens the chat -->
+      <div id="chat-language-start" class="card" style="display:none; margin-bottom:14px; border-left:5px solid var(--primary);">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div style="flex:1; min-width:260px;">
+            <h3 style="margin-bottom:5px;">🩺 Before we start: choose your appointment type</h3>
+            <p style="color:var(--text-muted); margin:0 0 12px;">Choose whether you want an Allopathic or Ayurvedic consultation. This preference will be attached to your AI intake and appointment.</p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" id="care-path-allopathic" class="btn btn-primary" onclick="selectCarePath('ALLOPATHIC')">💊 Allopathic</button>
+              <button type="button" id="care-path-ayurvedic" class="btn btn-secondary" onclick="selectCarePath('AYURVEDIC')">🌿 Ayurvedic</button>
+            </div>
+            <div id="care-path-selected" style="margin-top:10px; font-weight:700; color:var(--primary-dark);">Please select one to continue.</div>
+          </div>
+          <div style="min-width:180px;">
+            <button id="start-chat-btn" class="btn btn-primary" onclick="startChatWithLanguage()" disabled>▶ Start Chat</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Window -->
+      <div class="chat-window">
+        <!-- Header Bar with Language Picker -->
+        <div class="chat-header-bar">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span id="chat-language-label" style="font-weight: 700;">🌐 Language:</span>
+            <select id="chat-language-select" class="form-control" style="width: auto; padding: 6px 12px; font-size: 0.95rem;" onchange="onLanguageChange()">
+              <option value="en">English</option>
+              <option value="hi">हिंदी (Hindi)</option>
+              <option value="te">తెలుగు (Telugu)</option>
+              <option value="ta">தமிழ் (Tamil)</option>
+              <option value="bn">বাংলা (Bengali)</option>
+              <option value="kn">ಕನ್ನಡ (Kannada)</option>
+              <option value="ml">മലയാളം (Malayalam)</option>
+              <option value="mr">मराठी (Marathi)</option>
+              <option value="gu">ગુજરાતી (Gujarati)</option>
+              <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+              <option value="ur">اردو (Urdu)</option>
+              <option value="es">Español (Spanish)</option>
+            </select>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary" style="min-height: 40px; padding: 6px 14px; font-size: 0.9rem;" onclick="skipQuestion()">
+              ⏭ Skip
+            </button>
+            <button class="btn btn-secondary" style="min-height: 40px; padding: 6px 14px; font-size: 0.9rem;" onclick="stopChat()">
+              ⏹ Stop Chat
+            </button>
+          </div>
+        </div>
+
+        <!-- Chat Message Log -->
+        <div class="chat-messages" id="chat-messages-container" role="log" aria-live="polite">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Chat Inputs -->
+        <div class="chat-controls">
+          <!-- Live Voice Listening Status Banner -->
+          <div id="voice-live-status" style="display: none; background: #fee2e2; border: 2px solid #ef4444; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-weight: 700; color: #b91c1c; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="display: inline-block; width: 14px; height: 14px; background: #dc2626; border-radius: 50%; animation: pulse 1s infinite;"></span>
+              <span id="voice-live-text">Listening... please speak your symptoms now</span>
+            </div>
+            <span style="font-size: 0.85rem; color: #991b1b;">Release/silence → auto-send</span>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="chat-user-input" class="chat-input" placeholder="Type your symptoms or answer here..." onkeydown="if(event.key==='Enter') sendChatMessage()">
+            <button class="mic-btn" id="mic-toggle-btn" onclick="toggleSpeechRecognition()" title="Click to speak">
+              <span id="mic-icon">🎤</span>
+              <span id="mic-text">TALK</span>
+            </button>
+            <button id="chat-send-btn" class="btn btn-primary" onclick="sendChatMessage()">
+              Send
+            </button>
+          </div>
+          <div class="chat-secondary-actions">
+            <span id="chat-tip" style="font-size: 0.9rem; color: var(--text-muted);">
+              💡 Tip: Click 🎤 TALK to speak in your language or click 🔊 to listen to answers.
+            </span>
+            <button class="btn btn-secondary" style="min-height: 38px; padding: 6px 12px; font-size: 0.9rem;" onclick="openDocuments()">
+              📎 Attach Medical Document
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. STRUCTURED OVERVIEW DISPLAY ================= -->
+    <section id="view-ai-overview" style="display: none;">
+      <div class="view-nav">
+        <button class="btn btn-secondary" onclick="showView('view-ai-chat')">← Back to Chat</button>
+        <h2 style="font-size: 1.4rem;">Structured Medical Overview</h2>
+        <button class="btn btn-primary" onclick="openAppointmentsWithOverview()">📤 Send to Doctor & Book</button>
+      </div>
+
+      <div class="card" style="border-left: 6px solid var(--ai-color);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:12px;flex-wrap:wrap;">
+          <span class="badge badge-ai-generated">MEDICAL INTAKE SUMMARY</span>
+          <span style="font-size:.9rem;color:var(--text-muted);" id="overview-timestamp"></span>
+        </div>
+        <p style="margin:0 0 18px;color:var(--text-muted);font-size:.95rem;">Only clinically relevant information from the intake is shown. Greetings, filler, acknowledgements, and submission text are excluded.</p>
+
+        <div class="emergency-banner" id="overview-warning-box" style="display:none;">
+          <span class="icon">⚠️</span><div id="overview-warnings-text"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px;">
+          <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:var(--primary-dark);font-size:.9rem;">CHIEF COMPLAINT</div>
+            <div id="overview-chief" style="font-weight:800;font-size:1.15rem;margin-top:5px;"></div>
+          </div>
+          <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:var(--primary-dark);font-size:.9rem;">DURATION</div>
+            <div id="overview-duration-severity" style="font-weight:700;font-size:1.05rem;margin-top:5px;"></div>
+          </div>
+          <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:var(--primary-dark);font-size:.9rem;">CURRENT STATUS</div>
+            <div id="overview-current-status" style="font-weight:700;margin-top:5px;"></div>
+          </div>
+          <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:14px;">
+            <div style="font-weight:700;color:var(--primary-dark);font-size:.9rem;">TEMPERATURE</div>
+            <div id="overview-temperature" style="font-weight:800;font-size:1.05rem;margin-top:5px;"></div>
+          </div>
+        </div>
+
+        <div id="overview-symptoms-section" style="margin-top:22px;">
+          <h4 style="color:var(--primary-dark);margin-bottom:7px;">Current Symptoms</h4>
+          <ul id="overview-symptoms-list" style="padding-left:24px;margin-top:6px;"></ul>
+        </div>
+
+        <div id="overview-associated-section" style="margin-top:18px;">
+          <h4 style="color:var(--primary-dark);margin-bottom:7px;">Relevant Associated Findings</h4>
+          <ul id="overview-associated-list" style="padding-left:24px;margin-top:6px;"></ul>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;">
+          <div id="overview-conditions-section">
+            <h4 style="color:var(--primary-dark);margin-bottom:7px;">Existing Health Conditions</h4>
+            <ul id="overview-conditions-list" style="padding-left:24px;"></ul>
+          </div>
+          <div id="overview-meds-section">
+            <h4 style="color:var(--primary-dark);margin-bottom:7px;">Medications & Allergies</h4>
+            <p><strong>Medications:</strong> <span id="overview-medications"></span></p>
+            <p><strong>Allergies:</strong> <span id="overview-allergies"></span></p>
+          </div>
+        </div>
+
+        <div id="overview-care-preference" style="margin-top:12px;font-weight:700;color:var(--primary-dark);"></div>
+          <div id="overview-ayurveda-section" style="display:none;margin-top:20px;padding:14px 16px;border:1px solid #d8c9a7;border-radius:10px;background:#fffaf0;">
+          <h4 style="margin-bottom:8px;color:#76551d;">🌿 Ayurvedic / Traditional Medicine Context</h4>
+          <p id="overview-ayurvedic-medicines" style="margin:5px 0;"></p>
+          <p id="overview-ayurvedic-practitioner" style="margin:5px 0;"></p>
+          <p id="overview-diet-lifestyle" style="margin:5px 0;"></p>
+          <small style="color:var(--text-muted);">Patient-reported context only; this section is not a diagnosis or treatment recommendation.</small>
+        </div>
+
+        <div style="margin-top:20px;">
+          <h4 style="color:var(--primary-dark);margin-bottom:7px;">Clinician Brief</h4>
+          <div id="overview-summary-text" style="background:#f8fafc;padding:16px;border-radius:8px;border:1px solid var(--border-color);"></div>
+        </div>
+
+        <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <span style="font-size:.9rem;color:var(--text-muted);">⚠️ For healthcare-professional review only. This is not a diagnosis.</span>
+          <button class="btn btn-teal btn-large" onclick="openAppointmentsWithOverview()">📅 Send Overview to Doctor & Book Appointment</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. PATIENT MEDICAL HISTORY TIMELINE ================= -->
+    <section id="view-medical-history" style="display: none;">
+      <div class="view-nav">
+        <button class="btn btn-secondary" onclick="showView('view-patient-dashboard')">← Back to Dashboard</button>
+        <h2 style="font-size: 1.4rem;">My Verified Medical History</h2>
+        <div>
+          <button class="btn btn-primary" onclick="openAIChat()">+ Add New Intake</button>
+        </div>
+      </div>
+
+      <!-- Provenance Legend Card -->
+      <div class="card" style="background: #f8fafc; padding: 14px 20px; margin-bottom: 24px;">
+        <div style="font-weight: 700; margin-bottom: 8px;">Data Provenance & Verification Guide:</div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <span class="badge badge-doctor-verified">✓ VERIFIED BY DOCTOR</span>
+          <span style="font-size: 0.85rem;">= Clinically confirmed by a licensed physician</span>
+          <span class="badge badge-document-extracted">DOCUMENT EXTRACTED</span>
+          <span style="font-size: 0.85rem;">= Extracted from hospital/lab reports</span>
+          <span class="badge badge-patient-reported">PATIENT REPORTED</span>
+          <span style="font-size: 0.85rem;">= Logged by patient</span>
+          <span class="badge badge-ai-generated">AI GENERATED</span>
+          <span style="font-size: 0.85rem;">= Prepared by AI assistant</span>
+        </div>
+      </div>
+
+      <!-- Chronological Timeline Container -->
+      <div id="history-timeline-container" class="timeline">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- ================= 8. PATIENT DOCUMENTS ================= -->
+    <section id="view-documents" style="display: none;">
+      <div class="view-nav">
+        <button class="btn btn-secondary" onclick="showView('view-patient-dashboard')">← Back to Dashboard</button>
+        <h2 style="font-size: 1.4rem;">Medical Documents & Reports</h2>
+      </div>
+
+      <!-- Upload Form Card -->
+      <div class="card">
+        <h3 style="margin-bottom: 12px; color: var(--primary-dark);">Upload Medical Document</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">
+          Upload blood reports, scan summaries, discharge certificates, or prescriptions. Your uploaded documents are stored for clinician review.
+        </p>
+
+        <form id="form-document-upload" onsubmit="handleDocumentUpload(event)">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label for="doc-file-input">Select File (PDF, PNG, JPG, TXT)</label>
+              <input type="file" id="doc-file-input" class="form-control" accept=".pdf,.png,.jpg,.jpeg,.txt" required>
+            </div>
+            <div class="form-group">
+              <label for="doc-category-select">Document Category</label>
+              <select id="doc-category-select" class="form-control">
+                <option value="BLOOD_REPORT">Blood / Lab Report</option>
+                <option value="SCAN_REPORT">Scan / Imaging (ECG/Echo/X-ray)</option>
+                <option value="PRESCRIPTION">Prescription Slip</option>
+                <option value="DISCHARGE_SUMMARY">Discharge Summary</option>
+                <option value="OTHER">Other Clinical Record</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-teal btn-large" id="upload-doc-btn">
+            📤 Upload Medical Document
+          </button>
+        </form>
+      </div>
+
+      <!-- Uploaded Documents List -->
+      <h3 style="margin: 24px 0 12px; color: var(--text-main);">Your Processed Documents</h3>
+      <div id="documents-list-container">
+        <!-- Dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- ================= 9. PATIENT APPOINTMENTS ================= -->
+    <section id="view-appointments" style="display: none;">
+      <div class="view-nav">
+        <button class="btn btn-secondary" onclick="showView('view-patient-dashboard')">← Back to Dashboard</button>
+        <h2 style="font-size: 1.4rem;">Doctor Appointments</h2>
+      </div>
+
+      <!-- Book New Appointment Form -->
+      <div class="card">
+        <h3 style="margin-bottom: 12px; color: var(--primary-dark);">Request Appointment</h3>
+        <form id="form-appointment-request" onsubmit="handleAppointmentRequest(event)">
+          <div style="margin-bottom:14px;padding:10px 14px;border-radius:10px;background:#f0fdf4;border:1px solid #bbf7d0;font-weight:700;">
+            🩺 Appointment type: <span id="appt-care-path-label">💊 Allopathic</span>
+          </div>
+          <div class="appointment-filter-grid">
+            <div class="form-group">
+              <label for="appt-hospital-select">🏥 Select Hospital</label>
+              <select id="appt-hospital-select" class="form-control" onchange="onHospitalSelectChange()" required>
+                <option value="">Choose a hospital...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="appt-doctor-select">👨‍⚕️ Recommended Doctor</label>
+              <select id="appt-doctor-select" class="form-control" onchange="onDoctorSelectChange()" required>
+                <option value="">Choose a doctor...</option>
+              </select>
+              <small id="doctor-recommendation-note" style="display:block;margin-top:6px;color:var(--verified-color);font-weight:700;">Doctors will be filtered according to your AI medical overview.</small>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" class="responsive-grid-2">
+            <div class="form-group">
+              <label for="appt-date-input">Appointment Date</label>
+              <input type="date" id="appt-date-input" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="appt-slot-select">Available Time Slot</label>
+              <select id="appt-slot-select" class="form-control" required>
+                <option value="09:30 AM">09:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <option value="04:30 PM">04:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="appt-reason-input">Reason for Consultation</label>
+            <textarea id="appt-reason-input" class="form-control" rows="3" placeholder="Briefly describe why you are requesting this appointment..." required></textarea>
+          </div>
+
+          <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" id="appt-share-summary" checked style="width: 20px; height: 20px;">
+            <label for="appt-share-summary" style="margin-bottom: 0;">
+              Share my latest structured AI medical overview and records with this doctor
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large">
+            📅 Submit Appointment Request
+          </button>
+        </form>
+      </div>
+
+      <!-- Existing Appointments -->
+      <h3 style="margin: 24px 0 12px; color: var(--text-main);">My Appointment Requests & Schedule</h3>
+      <div id="patient-appointments-list">
+        <!-- Dynamically rendered -->
+      </div>
+    </section>
+
+    <!-- ================= 10. DOCTOR DASHBOARD ================= -->
+    <section id="view-doctor-dashboard" style="display: none;">
+      <!-- Doctor Profile Bar -->
+      <div class="card" style="background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%); border-color: #5eead4;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 id="doctor-greeting" style="font-size: 1.8rem; color: var(--teal-hover);">Dr. Ananya Sharma</h2>
+            <p id="doctor-details-line" style="color: var(--text-muted); font-size: 1.05rem;">
+              Cardiology & Vascular Medicine &bull; Apollo Heart Institute, Hyderabad
+            </p>
+          </div>
+          <div>
+            <span class="badge badge-doctor-verified" style="font-size: 1rem; padding: 8px 16px;">
+              ✓ AUTHORIZED CLINICIAN
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Tabs -->
+      <div class="tabs-header">
+        <button class="tab-btn active" id="tab-doc-pending" onclick="switchDoctorTab('pending')">
+          Pending Requests (<span id="pending-count">0</span>)
+        </button>
+        <button class="tab-btn" id="tab-doc-today" onclick="switchDoctorTab('today')">
+          Today's Appointments (<span id="today-count">0</span>)
+        </button>
+        <button class="tab-btn" id="tab-doc-patients" onclick="switchDoctorTab('patients')">
+          Shared Patients (<span id="shared-count">0</span>)
+        </button>
+        <button class="tab-btn" id="tab-doc-updates" onclick="switchDoctorTab('updates')">
+          Recent Patient Updates
+        </button>
+      </div>
+
+      <!-- Doctor Tab Panes -->
+      <div id="pane-doc-pending">
+        <!-- Dynamically loaded pending appointments with Accept/Reject -->
+      </div>
+
+      <div id="pane-doc-today" style="display: none;">
+        <!-- Dynamically loaded today's schedule -->
+      </div>
+
+      <div id="pane-doc-patients" style="display: none;">
+        <!-- Dynamically loaded shared patient directory -->
+      </div>
+
+      <div id="pane-doc-updates" style="display: none;">
+        <!-- Dynamically loaded recent updates -->
+      </div>
+    </section>
+
+    <!-- ================= 11. DOCTOR PATIENT CHART VIEW ================= -->
+    <section id="view-doctor-patient-chart" style="display: none;">
+      <div class="view-nav">
+        <button class="btn btn-secondary" onclick="showView('view-doctor-dashboard')">← Back to Doctor Dashboard</button>
+        <h2 style="font-size: 1.4rem;">Patient Clinical Chart</h2>
+        <button class="btn btn-teal" onclick="scrollToVerifyRecordForm()">✍️ Add Doctor Verified Record</button>
+      </div>
+
+      <!-- Patient Demographics Header -->
+      <div class="card" style="border-left: 6px solid var(--teal);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h3 id="chart-patient-name" style="font-size: 1.6rem; color: var(--text-main);">Ramesh Patel</h3>
+            <p id="chart-patient-meta" style="color: var(--text-muted); font-size: 1rem; margin-top: 4px;">
+              68 Yrs &bull; Male &bull; Blood Group: B+ &bull; Emergency: Sunita Patel (+91 98765 43211)
+            </p>
+          </div>
+          <div>
+            <span class="badge badge-patient-reported">PATIENT PERMISSION GRANTED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. PATIENT OVERVIEW FIRST (Requirement: Show most important information first!) -->
+      <div class="card" style="background: #ffffff; border: 2px solid var(--teal);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 1.35rem; color: var(--teal-hover);">🏥 PATIENT OVERVIEW</h3>
+          <span class="badge badge-ai-generated">AI SUMMARIZED & ORGANIZED</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div>
+            <h4 style="color: var(--primary-dark); font-size: 1.05rem;">Reason for Visit / Chief Concern</h4>
+            <p id="chart-reason-visit" style="font-weight: 700; font-size: 1.15rem; margin-top: 4px;"></p>
+          </div>
+          <div>
+            <h4 style="color: var(--primary-dark); font-size: 1.05rem;">Duration & Severity</h4>
+            <p id="chart-duration-severity" style="margin-top: 4px;"></p>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <h4 style="color: var(--primary-dark); font-size: 1.05rem;">Current Symptoms Reported</h4>
+          <ul id="chart-symptoms-list" style="padding-left: 24px; margin-top: 6px;"></ul>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px;">
+          <div>
+            <h4 style="color: var(--primary-dark); font-size: 1.05rem;">Important Medical History</h4>
+            <ul id="chart-history-list" style="padding-left: 24px; margin-top: 4px;"></ul>
+          </div>
+          <div>
+            <h4 style="color: var(--primary-dark); font-size: 1.05rem;">Current Medications & Allergies</h4>
+            <p style="margin-top: 4px;"><strong>Medications:</strong> <span id="chart-medications"></span></p>
+            <p><strong>Allergies:</strong> <span id="chart-allergies"></span></p>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <h4 style="color: var(--primary-dark); font-size: 1.05rem;">Recent Reports & Document Insights</h4>
+          <p id="chart-recent-reports" style="margin-top: 4px; color: var(--text-muted);"></p>
+        </div>
+
+        <div style="margin-top: 16px; padding: 16px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 10px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span class="badge badge-ai-generated">AI DOCUMENT SUMMARY</span>
+            <strong style="color: var(--primary-dark);">Clinically important points from uploaded reports</strong>
+          </div>
+          <div id="chart-document-ai-summary" style="white-space: pre-line; line-height: 1.6;">No document summary available.</div>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn btn-secondary" onclick="switchChartSection('history')">📋 Full Medical History</button>
+          <button class="btn btn-secondary" onclick="switchChartSection('documents')">📁 Uploaded Documents</button>
+          <button class="btn btn-secondary" onclick="switchChartSection('aisummary')">🤖 Full AI Summary</button>
+        </div>
+      </div>
+
+      <!-- Chart Sub-Sections (Full Medical History, Documents, AI Summary) -->
+      <div id="chart-section-history" class="card">
+        <h3 style="margin-bottom: 16px; color: var(--primary-dark);">Full Verified Medical Timeline</h3>
+        <div id="chart-timeline-container" class="timeline"></div>
+      </div>
+
+      <div id="chart-section-documents" class="card" style="display: none;">
+        <h3 style="margin-bottom: 16px; color: var(--primary-dark);">Patient Uploaded Documents</h3>
+        <div id="chart-documents-container"></div>
+      </div>
+
+      <div id="chart-section-aisummary" class="card" style="display: none;">
+        <h3 style="margin-bottom: 16px; color: var(--primary-dark);">Raw AI Structured Intake</h3>
+        <pre id="chart-raw-ai" style="background: #f8fafc; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 0.9rem;"></pre>
+      </div>
+
+      <!-- 2. ADD DOCTOR VERIFIED RECORD (Requirement: After consultation, add Diagnosis, Prescription, etc.) -->
+      <div class="card" id="doctor-verify-form-card" style="border-top: 6px solid var(--verified-color);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+          <span class="badge badge-doctor-verified" style="font-size: 1rem;">✓ DOCTOR VERIFICATION</span>
+          <h3 style="color: var(--verified-color);">Add Verified Clinical Record</h3>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">
+          Records entered here are permanently stamped <strong>✓ VERIFIED BY DOCTOR</strong> and added to the patient's official digital medical history.
+        </p>
+
+        <form id="form-verify-record" onsubmit="handleDoctorAddRecord(event)">
+          <div class="form-group">
+            <label for="record-type-select">Record Type</label>
+            <select id="record-type-select" class="form-control" onchange="onRecordTypeChange()">
+              <option value="CONSULTATION_NOTE">Consultation Notes & Clinical Assessment</option>
+              <option value="DIAGNOSIS">Confirmed Medical Diagnosis</option>
+              <option value="PRESCRIPTION">Doctor Prescription</option>
+              <option value="LAB_REPORT">Doctor Verified Lab Test / Order</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="record-title-input">Record Title</label>
+            <input type="text" id="record-title-input" class="form-control" placeholder="e.g. Cardiology Assessment & Follow-up Plan" required>
+          </div>
+
+          <!-- Specific Fields for Diagnosis -->
+          <div id="fields-diagnosis" style="display: none;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label for="diag-condition-input">Diagnosed Condition</label>
+                <input type="text" id="diag-condition-input" class="form-control" placeholder="e.g. Stage 1 Essential Hypertension">
+              </div>
+              <div class="form-group">
+                <label for="diag-severity-select">Severity</label>
+                <select id="diag-severity-select" class="form-control">
+                  <option value="Mild">Mild</option>
+                  <option value="Moderate">Moderate</option>
+                  <option value="Severe">Severe</option>
+                  <option value="Controlled">Controlled / Stable</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specific Fields for Prescription -->
+          <div id="fields-prescription" style="display: none;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label for="rx-med-name">Medication Name</label>
+                <input type="text" id="rx-med-name" class="form-control" placeholder="e.g. Tab Telmisartan">
+              </div>
+              <div class="form-group">
+                <label for="rx-dosage">Dosage & Frequency</label>
+                <input type="text" id="rx-dosage" class="form-control" placeholder="e.g. 40mg - Once daily morning">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="rx-instructions">Patient Instructions</label>
+              <input type="text" id="rx-instructions" class="form-control" placeholder="Take after food. Monitor BP weekly.">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="record-content-input">Clinical Notes / Full Instructions</label>
+            <textarea id="record-content-input" class="form-control" rows="4" placeholder="Enter clinical assessment, physical exam findings, and management instructions..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-teal btn-large">
+            ✓ Sign & Save as DOCTOR VERIFIED Record
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+<script>
+/* ===================================================================
+   VERIFIED DIGITAL MEDICAL HISTORY PLATFORM
+   Client-Side Application Logic (Accessible, Elder-Friendly SPA)
+   =================================================================== */
+
+// Global State
+let state = {
+  token: sessionStorage.getItem("med_token") || null,
+  role: sessionStorage.getItem("med_role") || null,
+  userName: sessionStorage.getItem("med_name") || null,
+  activeConversationId: null,
+  speechRecognition: null,
+  isListening: false,
+  voiceAssistance: true,
+  voiceAutoSend: true,
+  voiceFinalText: "",
+  voiceInitialText: "",
+  voiceSendTriggered: false,
+  currentChartPatientId: null,
+  latestGeneratedOverview: null,
+  carePath: sessionStorage.getItem("medikiosk_care_path") || null
+};
+
+
+// ================= SITE LANGUAGE =================
+const SITE_TRANSLATIONS = {
+  en:{language:"Language",languageHelp:"Choose the language you are most comfortable with",welcome:"Welcome to Medikiosk",selectAccount:"Please select your account type to proceed",patient:"PATIENT",doctor:"DOCTOR",patientDesc:"Talk to AI assistant, upload medical reports, and track verified health history",doctorDesc:"Review patient overviews, manage appointments, and verify clinical records",footer:"🔒 Powered by My Pre-Consultation Bot • All verified clinical entries are doctor-confirmed",back:"← Back",login:"Log In",signup:"Sign Up",recover:"Help / Recover",patientLogin:"Patient Login",newRegistration:"New Patient Registration",accountRecovery:"Account Recovery",email:"Email Address",password:"Password",fullName:"Full Name",createPassword:"Create Password",phone:"Phone Number",dob:"Date of Birth",blood:"Blood Group",selectBlood:"Select Blood Group",loginPatient:"🔐 Log In as Patient",createAccount:"✨ Create Patient Account",recoveryText:"Enter your registered email address and we will assist with your account recovery.",registeredEmail:"Registered Email",sendRecovery:"📩 Send Recovery Details",doctorPortal:"Doctor Secure Portal",doctorEmail:"Doctor Email / Medical ID",doctorLogin:"🩺 Secure Doctor Log In",dashboardSub:"Your verified health record hub. Everything is encrypted and doctor-audited.",aiTitle:"TALK TO AI",aiDesc:"Describe symptoms, speak in regional language & organize your medical intake",historyTitle:"MY MEDICAL HISTORY",historyDesc:"View verified clinical timeline, prescriptions & hospital reports",docsTitle:"MY DOCUMENTS",docsDesc:"Upload blood tests, scan reports, and prescriptions for AI extraction",apptTitle:"APPOINTMENTS",apptDesc:"Book consultation, choose doctor, and track appointment status",safety:"📌 Important Medical Safety Principle: The AI assistant helps you organize and summarize your symptoms for your doctor. The AI is not a doctor and does not diagnose diseases. Only licensed healthcare professionals can verify your medical records.",chatTitle:"AI Medical Intake Assistant",overview:"✨ Generate Structured Overview",skip:"⏭ Skip",stop:"⏹ Stop Chat",chatLanguage:"🌐 Language:",startLanguage:"🌐 Choose your comfortable language",startLanguageHelp:"The bot will ask questions and reply in your selected language.",startChat:"Start Chat",input:"Type your symptoms or answer here...",send:"Send",tip:"💡 Tip: Click 🎤 TALK to speak in your language or click 🔊 to listen to answers.",botName:"MY PRE-CONSULTATION BOT",listen:"Listen",you:"You",edit:"Edit",delete:"Delete"},
+  hi:{language:"भाषा",languageHelp:"अपनी सुविधानुसार भाषा चुनें",welcome:"Medikiosk में आपका स्वागत है",selectAccount:"आगे बढ़ने के लिए अपना खाता प्रकार चुनें",patient:"मरीज़",doctor:"डॉक्टर",patientDesc:"AI सहायक से बात करें, मेडिकल रिपोर्ट अपलोड करें और सत्यापित स्वास्थ्य इतिहास देखें",doctorDesc:"मरीज़ का विवरण देखें, अपॉइंटमेंट प्रबंधित करें और क्लिनिकल रिकॉर्ड सत्यापित करें",footer:"🔒 My Pre-Consultation Bot द्वारा संचालित • सभी सत्यापित क्लिनिकल रिकॉर्ड डॉक्टर द्वारा पुष्टि किए गए हैं",back:"← वापस",login:"लॉग इन",signup:"साइन अप",recover:"मदद / रिकवर",patientLogin:"मरीज़ लॉग इन",newRegistration:"नया मरीज़ पंजीकरण",accountRecovery:"खाता रिकवरी",email:"ईमेल पता",password:"पासवर्ड",fullName:"पूरा नाम",createPassword:"पासवर्ड बनाएँ",phone:"फ़ोन नंबर",dob:"जन्म तिथि",blood:"ब्लड ग्रुप",selectBlood:"ब्लड ग्रुप चुनें",loginPatient:"🔐 मरीज़ के रूप में लॉग इन",createAccount:"✨ मरीज़ खाता बनाएँ",recoveryText:"अपना पंजीकृत ईमेल दर्ज करें और हम खाता रिकवरी में सहायता करेंगे।",registeredEmail:"पंजीकृत ईमेल",sendRecovery:"📩 रिकवरी विवरण भेजें",doctorPortal:"डॉक्टर सुरक्षित पोर्टल",doctorEmail:"डॉक्टर ईमेल / मेडिकल आईडी",doctorLogin:"🩺 सुरक्षित डॉक्टर लॉग इन",dashboardSub:"आपका सत्यापित स्वास्थ्य रिकॉर्ड केंद्र। आपका डेटा एन्क्रिप्टेड और डॉक्टर द्वारा ऑडिट किया जाता है।",aiTitle:"AI से बात करें",aiDesc:"लक्षण बताएँ, अपनी भाषा में बोलें और मेडिकल जानकारी व्यवस्थित करें",historyTitle:"मेरा मेडिकल इतिहास",historyDesc:"सत्यापित क्लिनिकल इतिहास, प्रिस्क्रिप्शन और अस्पताल रिपोर्ट देखें",docsTitle:"मेरे दस्तावेज़",docsDesc:"ब्लड टेस्ट, स्कैन रिपोर्ट और प्रिस्क्रिप्शन अपलोड करें",apptTitle:"अपॉइंटमेंट",apptDesc:"परामर्श बुक करें, डॉक्टर चुनें और स्थिति देखें",safety:"📌 महत्वपूर्ण मेडिकल सुरक्षा: AI सहायक आपके लक्षणों को डॉक्टर के लिए व्यवस्थित करता है। AI डॉक्टर नहीं है और बीमारी का निदान नहीं करता।",chatTitle:"AI मेडिकल इंटेक सहायक",overview:"✨ संरचित सारांश बनाएँ",skip:"⏭ छोड़ें",stop:"⏹ चैट रोकें",chatLanguage:"🌐 भाषा:",startLanguage:"🌐 अपनी सुविधाजनक भाषा चुनें",startLanguageHelp:"बॉट आपकी चुनी हुई भाषा में प्रश्न पूछेगा और उत्तर देगा।",startChat:"चैट शुरू करें",input:"अपने लक्षण या उत्तर यहाँ लिखें...",send:"भेजें",tip:"💡 सुझाव: अपनी भाषा में बोलने के लिए 🎤 TALK दबाएँ या उत्तर सुनने के लिए 🔊 दबाएँ।",botName:"MY PRE-CONSULTATION BOT",listen:"सुनें",you:"आप",edit:"संपादित करें",delete:"हटाएँ"},
+  te:{language:"భాష",languageHelp:"మీకు సౌకర్యంగా ఉన్న భాషను ఎంచుకోండి",welcome:"Medikiosk కు స్వాగతం",selectAccount:"కొనసాగడానికి మీ ఖాతా రకాన్ని ఎంచుకోండి",patient:"రోగి",doctor:"డాక్టర్",patientDesc:"AI సహాయకుడితో మాట్లాడండి, వైద్య నివేదికలు అప్‌లోడ్ చేయండి మరియు ధృవీకరించిన ఆరోగ్య చరిత్రను చూడండి",doctorDesc:"రోగి వివరాలను చూడండి, అపాయింట్‌మెంట్లు నిర్వహించండి మరియు క్లినికల్ రికార్డులను ధృవీకరించండి",footer:"🔒 My Pre-Consultation Bot ద్వారా • అన్ని ధృవీకరించిన క్లినికల్ రికార్డులు డాక్టర్ ద్వారా నిర్ధారించబడతాయి",back:"← వెనుకకు",login:"లాగిన్",signup:"సైన్ అప్",recover:"సహాయం / రికవర్",patientLogin:"రోగి లాగిన్",newRegistration:"కొత్త రోగి నమోదు",accountRecovery:"ఖాతా రికవరీ",email:"ఈమెయిల్ చిరునామా",password:"పాస్‌వర్డ్",fullName:"పూర్తి పేరు",createPassword:"పాస్‌వర్డ్ సృష్టించండి",phone:"ఫోన్ నంబర్",dob:"పుట్టిన తేదీ",blood:"రక్త వర్గం",selectBlood:"రక్త వర్గాన్ని ఎంచుకోండి",loginPatient:"🔐 రోగిగా లాగిన్",createAccount:"✨ రోగి ఖాతా సృష్టించండి",recoveryText:"మీ నమోదిత ఈమెయిల్‌ను నమోదు చేయండి. ఖాతా రికవరీలో మేము సహాయం చేస్తాము.",registeredEmail:"నమోదిత ఈమెయిల్",sendRecovery:"📩 రికవరీ వివరాలు పంపండి",doctorPortal:"డాక్టర్ సురక్షిత పోర్టల్",doctorEmail:"డాక్టర్ ఈమెయిల్ / మెడికల్ ID",doctorLogin:"🩺 సురక్షిత డాక్టర్ లాగిన్",dashboardSub:"మీ ధృవీకరించిన ఆరోగ్య రికార్డు కేంద్రం. డేటా ఎన్‌క్రిప్ట్ చేయబడి డాక్టర్ ద్వారా ఆడిట్ చేయబడుతుంది.",aiTitle:"AIతో మాట్లాడండి",aiDesc:"లక్షణాలను వివరించండి, మీ భాషలో మాట్లాడండి మరియు వైద్య సమాచారాన్ని నిర్వహించండి",historyTitle:"నా వైద్య చరిత్ర",historyDesc:"ధృవీకరించిన క్లినికల్ చరిత్ర, ప్రిస్క్రిప్షన్లు మరియు ఆసుపత్రి నివేదికలను చూడండి",docsTitle:"నా పత్రాలు",docsDesc:"రక్త పరీక్షలు, స్కాన్ నివేదికలు మరియు ప్రిస్క్రిప్షన్లను అప్‌లోడ్ చేయండి",apptTitle:"అపాయింట్‌మెంట్లు",apptDesc:"సంప్రదింపును బుక్ చేయండి, డాక్టర్‌ను ఎంచుకోండి మరియు స్థితిని చూడండి",safety:"📌 ముఖ్యమైన వైద్య భద్రత: AI సహాయకుడు మీ లక్షణాలను డాక్టర్ కోసం క్రమబద్ధీకరిస్తాడు. AI డాక్టర్ కాదు మరియు వ్యాధులను నిర్ధారించదు.",chatTitle:"AI మెడికల్ ఇన్‌టేక్ సహాయకుడు",overview:"✨ నిర్మిత సారాంశం రూపొందించండి",skip:"⏭ దాటవేయండి",stop:"⏹ చాట్ ఆపండి",chatLanguage:"🌐 భాష:",startLanguage:"🌐 మీకు సౌకర్యమైన భాషను ఎంచుకోండి",startLanguageHelp:"బాట్ మీరు ఎంచుకున్న భాషలో ప్రశ్నలు అడిగి సమాధానాలు ఇస్తుంది.",startChat:"చాట్ ప్రారంభించండి",input:"మీ లక్షణాలు లేదా సమాధానం ఇక్కడ టైప్ చేయండి...",send:"పంపండి",tip:"💡 సూచన: మీ భాషలో మాట్లాడటానికి 🎤 TALK నొక్కండి లేదా సమాధానాలు వినడానికి 🔊 నొక్కండి.",botName:"MY PRE-CONSULTATION BOT",listen:"వినండి",you:"మీరు",edit:"సవరించండి",delete:"తొలగించండి"}
+};
+// For languages not fully translated yet, keep English for the remaining labels while preserving the user's selected language for the AI conversation.
+["ta","kn","ml","mr","bn","gu","pa","ur"].forEach(k => SITE_TRANSLATIONS[k] = {...SITE_TRANSLATIONS.en, language:k});
+function getTranslation(key, lang) { return (SITE_TRANSLATIONS[lang] && SITE_TRANSLATIONS[lang][key]) || SITE_TRANSLATIONS.en[key] || key; }
+function changeSiteLanguage(lang) {
+  localStorage.setItem("medikiosk_site_language", lang);
+  sessionStorage.setItem("medikiosk_chat_language", lang);
+  applySiteLanguage(lang);
+  const chatSelect = document.getElementById("chat-language-select"); if (chatSelect) chatSelect.value = lang;
+}
+function applySiteLanguage(lang) {
+  lang = lang || localStorage.getItem("medikiosk_site_language") || "en";
+  const T = k => getTranslation(k, lang);
+  const set = (id,key) => { const el=document.getElementById(id); if(el) el.textContent=T(key); };
+  const setValue = (id,key) => { const el=document.getElementById(id); if(el) el.placeholder=T(key); };
+  set("site-language-label","language"); set("site-language-help","languageHelp"); set("landing-title","welcome"); set("landing-subtitle","selectAccount");
+  set("landing-patient-title","patient"); set("landing-doctor-title","doctor"); set("landing-footer","footer");
+  const pd=document.querySelector("#landing-patient-btn span[style]"); if(pd) pd.textContent=T("patientDesc");
+  const dd=document.querySelector("#landing-doctor-btn span[style]"); if(dd) dd.textContent=T("doctorDesc");
+  set("patient-auth-back","back"); set("tab-patient-login","login"); set("tab-patient-signup","signup"); set("tab-patient-recover","recover");
+  set("dashboard-subtitle","dashboardSub"); set("dash-ai-title","aiTitle"); set("dash-ai-desc","aiDesc"); set("dash-history-title","historyTitle"); set("dash-history-desc","historyDesc"); set("dash-docs-title","docsTitle"); set("dash-docs-desc","docsDesc"); set("dash-appt-title","apptTitle"); set("dash-appt-desc","apptDesc");
+  set("chat-back-btn","back"); set("chat-title","chatTitle"); set("chat-overview-btn","overview"); set("chat-language-label","chatLanguage"); set("chat-skip-btn","skip"); set("chat-stop-btn","stop"); set("chat-send-btn","send"); set("chat-tip","tip"); setValue("chat-user-input","input");
+  const authTitle=document.getElementById("patient-auth-title"); if(authTitle){ const mode=window.currentPatientAuthMode||"signup"; authTitle.textContent=T(mode==="login"?"patientLogin":mode==="recover"?"accountRecovery":"newRegistration"); }
+  const labels={"patient-email":"email","patient-password":"password","signup-name":"fullName","signup-email":"email","signup-password":"createPassword","signup-phone":"phone","signup-dob":"dob","signup-blood":"blood","recover-email":"registeredEmail"};
+  Object.entries(labels).forEach(([id,key])=>{const el=document.querySelector(`label[for="${id}"]`); if(el) el.textContent=T(key);});
+  setValue("patient-email","email"); setValue("signup-name","fullName"); setValue("signup-email","email"); setValue("signup-password","createPassword"); setValue("signup-phone","phone"); setValue("recover-email","registeredEmail");
+  const pl=document.querySelector("#form-patient-login button[type=submit]"); if(pl) pl.textContent=T("loginPatient"); const ca=document.querySelector("#form-patient-signup button[type=submit]"); if(ca) ca.textContent=T("createAccount"); const rr=document.querySelector("#form-patient-recover button[type=submit]"); if(rr) rr.textContent=T("sendRecovery");
+  const startBtn=document.getElementById("start-chat-btn"); if(startBtn) startBtn.textContent="▶ " + T("startChat");
+  updateCarePathButtons();
+  const site=document.getElementById("site-language-select"); if(site) site.value=lang;
+}
+
+// ================= INITIALIZATION =================
+document.addEventListener("DOMContentLoaded", () => {
+  const initialLang = localStorage.getItem("medikiosk_site_language") || "en";
+  sessionStorage.setItem("medikiosk_chat_language", initialLang);
+  applySiteLanguage(initialLang);
+  initAccessibility();
+  initSpeechRecognition();
+
+  if (state.token && state.role) {
+    updateHeaderUser();
+    if (state.role === "PATIENT") {
+      loadPatientDashboard();
+      showView("view-patient-dashboard");
+    } else if (state.role === "DOCTOR") {
+      loadDoctorDashboard();
+      showView("view-doctor-dashboard");
+    }
+  } else {
+    showView("view-landing");
+  }
+});
+
+// ================= ACCESSIBILITY & AUDIO =================
+function setFontScale(scale) {
+  document.body.classList.remove("font-large", "font-xlarge");
+  if (scale === "large") document.body.classList.add("font-large");
+  if (scale === "xlarge") document.body.classList.add("font-xlarge");
+  showToast(`Font size adjusted to: ${scale.toUpperCase()}`);
+}
+
+function toggleHighContrast() {
+  document.body.classList.toggle("high-contrast");
+  const isHc = document.body.classList.contains("high-contrast");
+  const btn = document.getElementById("hc-toggle-btn");
+  if (btn) btn.textContent = isHc ? "☀️ Standard Mode" : "🌓 High Contrast";
+  showToast(isHc ? "High Contrast Mode Enabled" : "Standard Contrast Mode");
+}
+
+function toggleVoiceAssistance() {
+  state.voiceAssistance = !state.voiceAssistance;
+  const btn = document.getElementById("voice-assist-btn");
+  if (btn) {
+    btn.textContent = state.voiceAssistance ? "🔊 Voice Output: ON" : "🔇 Voice Output: OFF";
+  }
+  showToast(state.voiceAssistance ? "Voice Readout Activated" : "Voice Readout Muted");
+}
+
+function initAccessibility() {
+  // Set today's date for appointment inputs
+  const apptDateInput = document.getElementById("appt-date-input");
+  if (apptDateInput) {
+    const today = new Date().toISOString().split("T")[0];
+    apptDateInput.value = today;
+    apptDateInput.min = today;
+  }
+}
+
+function getLanguageVoiceConfig(lang = "en") {
+  const configs = {
+    en: { locale: "en-IN", fallbacks: ["en-IN", "en-US", "en-GB"], rate: 0.94, pitch: 1.0 },
+    hi: { locale: "hi-IN", fallbacks: ["hi-IN"], rate: 0.92, pitch: 1.0 },
+    te: { locale: "te-IN", fallbacks: ["te-IN"], rate: 0.90, pitch: 1.0 },
+    ta: { locale: "ta-IN", fallbacks: ["ta-IN"], rate: 0.90, pitch: 1.0 },
+    kn: { locale: "kn-IN", fallbacks: ["kn-IN"], rate: 0.90, pitch: 1.0 },
+    ml: { locale: "ml-IN", fallbacks: ["ml-IN"], rate: 0.90, pitch: 1.0 },
+    mr: { locale: "mr-IN", fallbacks: ["mr-IN"], rate: 0.91, pitch: 1.0 },
+    bn: { locale: "bn-IN", fallbacks: ["bn-IN"], rate: 0.91, pitch: 1.0 },
+    gu: { locale: "gu-IN", fallbacks: ["gu-IN"], rate: 0.91, pitch: 1.0 },
+    pa: { locale: "pa-IN", fallbacks: ["pa-IN"], rate: 0.91, pitch: 1.0 },
+    ur: { locale: "ur-IN", fallbacks: ["ur-IN"], rate: 0.91, pitch: 1.0 },
+    es: { locale: "es-ES", fallbacks: ["es-ES", "es-US"], rate: 0.94, pitch: 1.0 }
+  };
+  return configs[lang] || configs.en;
+}
+
+function pickBestSpeechVoice(lang) {
+  if (!("speechSynthesis" in window)) return null;
+  const config = getLanguageVoiceConfig(lang);
+  const voices = window.speechSynthesis.getVoices() || [];
+  if (!voices.length) return null;
+  const normalized = config.fallbacks.map(x => x.toLowerCase());
+  // Prefer exact regional voices, then language-only voices.
+  return voices.find(v => normalized.includes(String(v.lang || "").toLowerCase()))
+      || voices.find(v => normalized.some(code => String(v.lang || "").toLowerCase().startsWith(code.slice(0,2))))
+      || null;
+}
+
+function speakText(text, lang = "en") {
+  if (!("speechSynthesis" in window) || !state.voiceAssistance) return;
+  window.speechSynthesis.cancel();
+
+  // Remove markdown and UI punctuation before speaking.
+  const clean = String(text || "").replace(/[*_#`~]/g, "").replace(/\s+/g, " ").trim();
+  if (!clean) return;
+
+  const config = getLanguageVoiceConfig(lang);
+  const utterance = new SpeechSynthesisUtterance(clean);
+  utterance.lang = config.locale;
+  utterance.rate = config.rate;
+  utterance.pitch = config.pitch;
+  const voice = pickBestSpeechVoice(lang);
+  if (voice) utterance.voice = voice;
+  window.speechSynthesis.speak(utterance);
+}
+
+// Browser voices can load asynchronously. Keep the voice list ready.
+if ("speechSynthesis" in window) {
+  window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
+// ================= SPEECH TO TEXT (TALK BUTTON) =================
+function initSpeechRecognition() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    console.warn("Speech recognition is not supported natively in this browser.");
+  }
+}
+
+function toggleSpeechRecognition() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    alert("Voice recognition requires Google Chrome, Microsoft Edge, or a Web Speech-supported browser. You can type directly in the input box.");
+    return;
+  }
+
+  // Clicking TALK while listening stops the microphone. A completed recording
+  // is automatically sent only after SpeechRecognition reports final text.
+  if (state.isListening && state.speechRecognition) {
+    try { state.speechRecognition.stop(); } catch (e) {}
+    return;
+  }
+
+  try {
+    const recognition = new SpeechRecognition();
+    state.speechRecognition = recognition;
+    state.voiceFinalText = "";
+    state.voiceSendTriggered = false;
+
+    const langSelect = document.getElementById("chat-language-select");
+    const lang = langSelect ? langSelect.value : "en";
+    const langMap = {
+      "en": "en-US", "hi": "hi-IN", "te": "te-IN",
+      "ta": "ta-IN", "bn": "bn-IN", "kn": "kn-IN", "ml": "ml-IN", "mr": "mr-IN", "gu": "gu-IN", "pa": "pa-IN", "ur": "ur-IN", "es": "es-ES"
+    };
+    recognition.lang = langMap[lang] || "en-US";
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+
+    const input = document.getElementById("chat-user-input");
+    const liveStatus = document.getElementById("voice-live-status");
+    const liveText = document.getElementById("voice-live-text");
+    const langName = langSelect ? langSelect.options[langSelect.selectedIndex].text : "English";
+
+    state.voiceInitialText = input ? input.value.trim() : "";
+
+    recognition.onstart = () => {
+      state.isListening = true;
+      state.voiceFinalText = "";
+      state.voiceSendTriggered = false;
+      updateMicButtonUI(true);
+      if (liveStatus) liveStatus.style.display = "flex";
+      if (liveText) liveText.textContent = `🔴 Listening (${langName})... speak your symptoms now.`;
+      showToast(`Listening in ${langName}...`);
+    };
+
+    recognition.onresult = (event) => {
+      let finalText = "";
+      let interimText = "";
+      for (let i = 0; i < event.results.length; ++i) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) finalText += transcript + " ";
+        else interimText += transcript;
+      }
+
+      // Keep only final speech for the automatic send. Interim text is preview only.
+      if (finalText.trim()) state.voiceFinalText = finalText.trim();
+      const preview = state.voiceFinalText || interimText.trim();
+      if (input && preview) {
+        input.value = state.voiceInitialText
+          ? `${state.voiceInitialText} ${preview}`
+          : preview;
+      }
+      if (liveText && preview) liveText.textContent = `Heard: "${preview}"`;
+    };
+
+    recognition.onerror = (event) => {
+      console.warn("Speech recognition error:", event.error);
+      state.isListening = false;
+      state.voiceFinalText = "";
+      updateMicButtonUI(false);
+      if (liveStatus) liveStatus.style.display = "none";
+
+      if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+        alert("Microphone access was denied. Please allow microphone permission in your browser.");
+      } else if (event.error === "no-speech") {
+        showToast("No speech was heard. Click TALK and speak again.");
+      } else if (event.error !== "aborted") {
+        showToast(`Microphone notice: ${event.error}`);
+      }
+    };
+
+    recognition.onend = () => {
+      state.isListening = false;
+      updateMicButtonUI(false);
+      if (liveStatus) liveStatus.style.display = "none";
+
+      const spoken = state.voiceFinalText.trim();
+      if (spoken && state.voiceAutoSend && !state.voiceSendTriggered) {
+        state.voiceSendTriggered = true;
+        // Give the browser one tick to finish updating the input field.
+        setTimeout(() => sendChatMessage(), 100);
+      } else if (spoken) {
+        showToast("Speech captured.");
+      }
+    };
+
+    recognition.start();
+  } catch (err) {
+    console.error("Speech recognition startup error:", err);
+    state.isListening = false;
+    updateMicButtonUI(false);
+    const liveStatus = document.getElementById("voice-live-status");
+    if (liveStatus) liveStatus.style.display = "none";
+    alert("Could not activate microphone. Please check browser microphone permissions.");
+  }
+}
+
+function stopVoiceAndSend() {
+  if (state.speechRecognition && state.isListening) {
+    try {
+      state.speechRecognition.stop();
+    } catch(e) {}
+  }
+  state.isListening = false;
+  updateMicButtonUI(false);
+  const liveStatus = document.getElementById("voice-live-status");
+  if (liveStatus) liveStatus.style.display = "none";
+  sendChatMessage();
+}
+
+function updateMicButtonUI(isListening) {
+  const micBtn = document.getElementById("mic-toggle-btn");
+  const micText = document.getElementById("mic-text");
+  if (!micBtn || !micText) return;
+
+  if (isListening) {
+    micBtn.classList.add("listening");
+    micText.textContent = "LISTENING...";
+  } else {
+    micBtn.classList.remove("listening");
+    micText.textContent = "TALK";
+  }
+}
+
+// ================= TOAST NOTIFICATION =================
+function showToast(message, duration = 3500) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.style.display = "block";
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => {
+    toast.style.display = "none";
+  }, duration);
+}
+
+// ================= VIEW NAVIGATION =================
+const ALL_VIEWS = [
+  "view-landing",
+  "view-patient-auth",
+  "view-doctor-auth",
+  "view-patient-dashboard",
+  "view-ai-chat",
+  "view-ai-overview",
+  "view-medical-history",
+  "view-documents",
+  "view-appointments",
+  "view-doctor-dashboard",
+  "view-doctor-patient-chart"
+];
+
+function showView(viewId) {
+  ALL_VIEWS.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = (id === viewId) ? "block" : "none";
+  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function navigateHome() {
+  if (!state.token) {
+    showView("view-landing");
+  } else if (state.role === "PATIENT") {
+    loadPatientDashboard();
+    showView("view-patient-dashboard");
+  } else if (state.role === "DOCTOR") {
+    loadDoctorDashboard();
+    showView("view-doctor-dashboard");
+  }
+}
+
+function updateHeaderUser() {
+  const nav = document.getElementById("user-header-nav");
+  const badge = document.getElementById("header-user-badge");
+  if (state.token && state.userName) {
+    nav.style.display = "flex";
+    badge.textContent = `${state.role === "DOCTOR" ? "🩺" : "👤"} ${state.userName}`;
+  } else {
+    nav.style.display = "none";
+  }
+}
+
+function handleLogout() {
+  sessionStorage.removeItem("med_token");
+  sessionStorage.removeItem("med_role");
+  sessionStorage.removeItem("med_name");
+  state.token = null;
+  state.role = null;
+  state.userName = null;
+  updateHeaderUser();
+  showToast("Logged out securely.");
+  showView("view-landing");
+}
+
+// ================= AUTH HANDLERS =================
+function showPatientAuth() {
+  setPatientAuthMode("signup");
+  showView("view-patient-auth");
+}
+
+function showDoctorAuth() {
+  setDoctorAuthMode("login");
+  showView("view-doctor-auth");
+}
+
+function setDoctorAuthMode(mode) {
+  const loginBtn = document.getElementById("tab-doctor-login");
+  const signupBtn = document.getElementById("tab-doctor-signup");
+  const loginForm = document.getElementById("form-doctor-login");
+  const signupForm = document.getElementById("form-doctor-signup");
+  const isSignup = mode === "signup";
+  if (loginBtn) { loginBtn.classList.toggle("btn-primary", !isSignup); loginBtn.classList.toggle("btn-secondary", isSignup); }
+  if (signupBtn) { signupBtn.classList.toggle("btn-primary", isSignup); signupBtn.classList.toggle("btn-secondary", !isSignup); }
+  if (loginForm) loginForm.style.display = isSignup ? "none" : "block";
+  if (signupForm) signupForm.style.display = isSignup ? "block" : "none";
+}
+
+async function handleDoctorSignup(e) {
+  e.preventDefault();
+  const btn = document.getElementById("doctor-signup-submit");
+  const file = document.getElementById("doctor-medical-id-card").files[0];
+  if (!file) { alert("Please upload your medical ID / registration card."); return; }
+  if (file.size > 10 * 1024 * 1024) { alert("Please choose a medical ID file smaller than 10 MB."); return; }
+
+  const formData = new FormData();
+  formData.append("full_name", document.getElementById("doctor-signup-name").value.trim());
+  formData.append("email", document.getElementById("doctor-signup-email").value.trim());
+  formData.append("password", document.getElementById("doctor-signup-password").value);
+  formData.append("registration_number", document.getElementById("doctor-signup-registration").value.trim());
+  formData.append("specialization", document.getElementById("doctor-signup-specialization").value);
+  formData.append("hospital_affiliation", document.getElementById("doctor-signup-hospital").value);
+  formData.append("medical_id_card", file);
+
+  btn.disabled = true;
+  btn.textContent = "🤖 AI is verifying the medical credential...";
+  try {
+    const res = await fetch("/api/auth/doctor-signup", { method:"POST", body:formData });
+    const data = await res.json();
+    if (!res.ok) {
+      const reason = data?.verification?.reason ? `
+Reason: ${data.verification.reason}` : "";
+      throw new Error((data.detail || "Doctor signup failed") + reason);
+    }
+    alert("✓ Strict AI verification passed. Your doctor account has been created. Please log in.");
+    document.getElementById("doctor-email").value = document.getElementById("doctor-signup-email").value.trim();
+    document.getElementById("doctor-password").value = "";
+    e.target.reset();
+    setDoctorAuthMode("login");
+  } catch (err) {
+    alert(`Doctor AI Verification: ${err.message}`);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "🤖 Verify Card & Create Doctor Account";
+  }
+}
+
+function setPatientAuthMode(mode) {
+  window.currentPatientAuthMode = mode;
+  const tabs = ["login", "signup", "recover"];
+  tabs.forEach(m => {
+    const btn = document.getElementById(`tab-patient-${m}`);
+    const form = document.getElementById(`form-patient-${m}`);
+    if (btn) btn.classList.toggle("btn-primary", m === mode);
+    if (btn) btn.classList.toggle("btn-secondary", m !== mode);
+    if (form) form.style.display = (m === mode) ? "block" : "none";
+  });
+  const title = document.getElementById("patient-auth-title");
+  if (title) {
+    const lang = localStorage.getItem("medikiosk_site_language") || "en";
+    title.textContent = getTranslation(mode === "login" ? "patientLogin" : (mode === "signup" ? "newRegistration" : "accountRecovery"), lang);
+  }
+}
+
+
+async function handlePatientLogin(e) {
+  e.preventDefault();
+  const email = document.getElementById("patient-email").value.trim();
+  const password = document.getElementById("patient-password").value;
+
+  try {
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Login failed");
+
+    if (data.role !== "PATIENT") {
+      throw new Error("This account is registered as a DOCTOR. Please use the Doctor Portal.");
+    }
+
+    saveSession(data.token, data.role, data.full_name);
+    document.getElementById("patient-password").value = "";
+    showToast(`Welcome back, ${data.full_name}!`);
+    loadPatientDashboard();
+    showView("view-patient-dashboard");
+  } catch (err) {
+    alert(`Login Error: ${err.message}`);
+  }
+}
+
+async function handleDoctorLogin(e) {
+  e.preventDefault();
+  const email = document.getElementById("doctor-email").value.trim();
+  const password = document.getElementById("doctor-password").value;
+
+  try {
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Login failed");
+
+    if (data.role !== "DOCTOR") {
+      throw new Error("This account is registered as a PATIENT. Please use the Patient Portal.");
+    }
+
+    saveSession(data.token, data.role, data.full_name);
+    document.getElementById("doctor-password").value = "";
+    showToast(`Welcome Dr. ${data.full_name}!`);
+    loadDoctorDashboard();
+    showView("view-doctor-dashboard");
+  } catch (err) {
+    alert(`Doctor Authentication Error: ${err.message}`);
+  }
+}
+
+async function handlePatientSignup(e) {
+  e.preventDefault();
+  const full_name = document.getElementById("signup-name").value.trim();
+  const email = document.getElementById("signup-email").value.trim();
+  const password = document.getElementById("signup-password").value;
+  const phone = document.getElementById("signup-phone").value.trim();
+  const date_of_birth = document.getElementById("signup-dob").value;
+  const blood_group = document.getElementById("signup-blood").value;
+
+  try {
+    const res = await fetch("/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email, password, role: "PATIENT", full_name, phone, date_of_birth, blood_group
+      })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Signup failed");
+
+    showToast("Registration successful! Please log in with your new account.");
+    setPatientAuthMode("login");
+    document.getElementById("patient-email").value = email;
+    document.getElementById("patient-password").value = "";
+  } catch (err) {
+    alert(`Registration Error: ${err.message}`);
+  }
+}
+
+function handlePatientRecover(e) {
+  e.preventDefault();
+  const email = document.getElementById("recover-email").value;
+  fetch("/api/auth/recover", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email })
+  });
+  alert(`If an account is associated with ${email}, recovery information has been dispatched. Please check your SMS/email.`);
+  setPatientAuthMode("login");
+}
+
+function saveSession(token, role, name) {
+  state.token = token;
+  state.role = role;
+  state.userName = name;
+  sessionStorage.setItem("med_token", token);
+  sessionStorage.setItem("med_role", role);
+  sessionStorage.setItem("med_name", name);
+  updateHeaderUser();
+}
+
+function getAuthHeaders() {
+  return {
+    "Authorization": `Bearer ${state.token}`,
+    "Content-Type": "application/json"
+  };
+}
+
+// ================= PATIENT DASHBOARD =================
+async function loadPatientDashboard() {
+  try {
+    const res = await fetch("/api/patient/dashboard", { headers: getAuthHeaders() });
+    if (res.status === 401) { handleLogout(); return; }
+    const data = await res.json();
+
+    const greeting = document.getElementById("patient-greeting");
+    if (greeting) greeting.textContent = `Welcome, ${data.full_name}`;
+
+    const verifiedBadge = document.getElementById("badge-verified-records-count");
+    if (verifiedBadge) {
+      verifiedBadge.textContent = `✓ ${data.verified_count} DOCTOR VERIFIED RECORDS`;
+    }
+
+    // Upcoming Appointment Card
+    const apptCard = document.getElementById("dashboard-appointment-card");
+    if (apptCard) {
+      if (data.upcoming_appointment) {
+        const a = data.upcoming_appointment;
+        const statusBadge = a.status === "ACCEPTED" 
+          ? '<span class="badge badge-doctor-verified">✓ CONFIRMED</span>'
+          : '<span class="badge badge-patient-reported">⏳ PENDING REVIEW</span>';
+
+        apptCard.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); text-transform: uppercase;">
+                Upcoming Consultation
+              </div>
+              <h3 style="font-size: 1.35rem; margin-top: 4px;">${a.doctor_name}</h3>
+              <p style="color: var(--text-muted); font-size: 1rem;">
+                ${a.specialization} &bull; ${a.hospital_affiliation}
+              </p>
+              <div style="margin-top: 8px; font-weight: 700; font-size: 1.05rem;">
+                📅 ${a.appointment_date} at ⏰ ${a.time_slot}
+              </div>
+            </div>
+            <div>${statusBadge}</div>
+          </div>
+        `;
+      } else {
+        apptCard.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: gap;">
+            <div>
+              <h4 style="font-size: 1.15rem; color: var(--text-main);">No upcoming appointments scheduled</h4>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">You can consult with our verified doctors anytime.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openAppointments()">📅 Book Appointment</button>
+          </div>
+        `;
+      }
+    }
+  } catch (err) {
+    console.error("Dashboard error:", err);
+  }
+}
+
+// ================= AI CHAT INTAKE =================
+function openAIChat() {
+  showView("view-ai-chat");
+  const savedLang = localStorage.getItem("medikiosk_site_language") || sessionStorage.getItem("medikiosk_chat_language") || "en";
+  const startBox = document.getElementById("chat-language-start");
+  const input = document.getElementById("chat-user-input");
+  if (input) input.disabled = true;
+  setChatLanguage(savedLang);
+  if (startBox) startBox.style.display = "block";
+  state.carePath = sessionStorage.getItem("medikiosk_care_path") || null;
+  updateCarePathButtons();
+  loadChatHistory(true);
+}
+
+function selectCarePath(path) {
+  path = String(path || "").toUpperCase();
+  if (!["ALLOPATHIC","AYURVEDIC"].includes(path)) return;
+  state.carePath = path;
+  sessionStorage.setItem("medikiosk_care_path", path);
+  updateCarePathButtons();
+}
+
+function updateCarePathButtons() {
+  const a = document.getElementById("care-path-allopathic");
+  const ay = document.getElementById("care-path-ayurvedic");
+  const label = document.getElementById("care-path-selected");
+  const btn = document.getElementById("start-chat-btn");
+  const selected = state.carePath;
+  if (a) a.className = selected === "ALLOPATHIC" ? "btn btn-primary" : "btn btn-secondary";
+  if (ay) ay.className = selected === "AYURVEDIC" ? "btn btn-primary" : "btn btn-secondary";
+  if (label) label.textContent = selected === "AYURVEDIC" ? "✓ Ayurvedic appointment selected" : selected === "ALLOPATHIC" ? "✓ Allopathic appointment selected" : "Please select one to continue.";
+  if (btn) btn.disabled = !selected;
+}
+
+async function startChatWithLanguage() {
+  const select = document.getElementById("chat-language-select");
+  const language = select ? select.value : (localStorage.getItem("medikiosk_site_language") || "en");
+  if (!state.carePath) { updateCarePathButtons(); return; }
+  sessionStorage.setItem("medikiosk_chat_language", language);
+  localStorage.setItem("medikiosk_site_language", language);
+  setChatLanguage(language);
+  try {
+    const res = await fetch("/api/chat/preference", { method:"POST", headers:{...getAuthHeaders(), "Content-Type":"application/json"}, body:JSON.stringify({care_path:state.carePath}) });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Could not save appointment type.");
+    state.activeConversationId = data.conversation_id;
+    const startBox = document.getElementById("chat-language-start");
+    if (startBox) startBox.style.display = "none";
+    const input = document.getElementById("chat-user-input");
+    if (input) { input.disabled = false; input.focus(); }
+    await loadChatHistory(false);
+  } catch (err) {
+    showToast(err.message || "Could not save appointment type.", "error");
+  }
+}
+
+function setChatLanguage(language) {
+  language = language || "en";
+  sessionStorage.setItem("medikiosk_chat_language", language);
+  localStorage.setItem("medikiosk_site_language", language);
+  const select = document.getElementById("chat-language-select");
+  if (select) select.value = language;
+}
+
+async function loadChatHistory(showStartChoice = false) {
+  try {
+    const res = await fetch("/api/chat/history", { headers: getAuthHeaders() });
+    const data = await res.json();
+    state.activeConversationId = data.conversation_id;
+    if (data.care_path && data.messages && data.messages.length > 0) {
+      state.carePath = data.care_path;
+      sessionStorage.setItem("medikiosk_care_path", data.care_path);
+    }
+    updateCarePathButtons();
+
+    const container = document.getElementById("chat-messages-container");
+    container.innerHTML = "";
+
+    const language = sessionStorage.getItem("medikiosk_chat_language") || localStorage.getItem("medikiosk_site_language") || "en";
+    // Always synchronize the visible chat selector with the saved global language.
+    setChatLanguage(language);
+
+    if (data.messages && data.messages.length > 0) {
+      const startBox = document.getElementById("chat-language-start");
+      if (startBox) startBox.style.display = "none";
+      const input = document.getElementById("chat-user-input");
+      if (input) input.disabled = false;
+      data.messages.forEach(msg => {
+        appendChatBubble(msg.sender, msg.message_text, msg.extra_metadata?.is_emergency, msg.id);
+      });
+    } else {
+      const welcome = {
+        en: "Hi! I'm here to understand what's bothering you. What is your problem?",
+        hi: "नमस्ते! मैं यह समझने में मदद करूंगा कि आपको क्या परेशानी है। आपकी समस्या क्या है?",
+        te: "నమస్కారం! మీకు ఏమి ఇబ్బంది ఉందో అర్థం చేసుకోవడానికి నేను సహాయం చేస్తాను. మీ సమస్య ఏమిటి?",
+        ta: "வணக்கம்! உங்களுக்கு என்ன பிரச்சனை என்பதைப் புரிந்துகொள்ள நான் உதவுகிறேன். உங்கள் பிரச்சனை என்ன?"
+      }[language] || "Hi! I'm here to understand what's bothering you. What is your problem?";
+      appendChatBubble("AI", welcome, false, null);
+      speakText(welcome, language);
+    }
+    scrollChatBottom();
+  } catch (err) {
+    console.error("Chat load error:", err);
+  }
+}
+
+function appendChatBubble(sender, text, isEmergency = false, messageId = null) {
+  const container = document.getElementById("chat-messages-container");
+  if (!container) return;
+  const bubble = document.createElement("div");
+  const langSelect = document.getElementById("chat-language-select");
+  const currentLang = langSelect ? langSelect.value : (localStorage.getItem("medikiosk_site_language") || "en");
+
+  if (sender === "PATIENT") {
+    bubble.className = "chat-bubble patient";
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex;justify-content:space-between;gap:10px;align-items:flex-start;";
+    const content = document.createElement("div");
+    const strong = document.createElement("strong");
+    strong.textContent = getTranslation("you", currentLang) + ":";
+    content.appendChild(strong);
+    content.appendChild(document.createElement("br"));
+    const textNode = document.createTextNode(text);
+    content.appendChild(textNode);
+    row.appendChild(content);
+
+    if (messageId !== null && messageId !== undefined) {
+      const actions = document.createElement("div");
+      actions.style.cssText = "display:flex;gap:5px;flex-shrink:0;";
+      const editBtn = document.createElement("button");
+      editBtn.className = "btn btn-secondary";
+      editBtn.style.cssText = "padding:4px 8px;font-size:.78rem;min-height:30px;";
+      editBtn.textContent = "✏️ " + getTranslation("edit", currentLang);
+      editBtn.type = "button";
+      editBtn.addEventListener("click", () => editChatMessage(Number(messageId), text));
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "btn btn-secondary";
+      deleteBtn.style.cssText = "padding:4px 8px;font-size:.78rem;min-height:30px;";
+      deleteBtn.textContent = "🗑 " + getTranslation("delete", currentLang);
+      deleteBtn.type = "button";
+      deleteBtn.addEventListener("click", () => deleteChatMessage(Number(messageId)));
+      actions.appendChild(editBtn);
+      actions.appendChild(deleteBtn);
+      row.appendChild(actions);
+    }
+    bubble.appendChild(row);
+  } else if (sender === "AI") {
+    bubble.className = "chat-bubble ai";
+    const head = document.createElement("div");
+    head.style.cssText = "display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;";
+    const badge = document.createElement("span");
+    badge.className = "badge badge-ai-generated";
+    badge.style.cssText = "font-size:.75rem;padding:2px 8px;";
+    badge.textContent = getTranslation("botName", currentLang);
+    const listenBtn = document.createElement("button");
+    listenBtn.className = "read-aloud-btn";
+    listenBtn.type = "button";
+    listenBtn.title = getTranslation("listen", currentLang);
+    listenBtn.textContent = "🔊 " + getTranslation("listen", currentLang);
+    listenBtn.addEventListener("click", () => speakText(text, currentLang));
+    head.appendChild(badge);
+    head.appendChild(listenBtn);
+    bubble.appendChild(head);
+    const body = document.createElement("div");
+    body.innerHTML = formatMarkdown(text);
+    bubble.appendChild(body);
+  }
+  container.appendChild(bubble);
+  const banner = document.getElementById("chat-emergency-banner");
+  if (banner && isEmergency) banner.style.display = "flex";
+  scrollChatBottom();
+}
+
+async function editChatMessage(messageId, oldText) {
+  const updated = prompt("Edit your message:", oldText);
+  if (updated === null || !updated.trim() || updated.trim() === oldText.trim()) return;
+  const language = sessionStorage.getItem("medikiosk_chat_language") || "en";
+  try {
+    const res = await fetch("/api/chat/edit", { method:"POST", headers:getAuthHeaders(), body:JSON.stringify({message_id:messageId,message:updated.trim(),language}) });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Could not edit message");
+    await loadChatHistory();
+    showToast("Message edited and the bot response was updated.");
+  } catch (err) { alert(err.message); }
+}
+
+async function deleteChatMessage(messageId) {
+  if (!confirm("Delete this message? Later bot messages that depend on it will also be removed.")) return;
+  try {
+    const res = await fetch("/api/chat/delete-message", { method:"POST", headers:getAuthHeaders(), body:JSON.stringify({message_id:messageId}) });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Could not delete message");
+    await loadChatHistory();
+    showToast("Message deleted.");
+  } catch (err) { alert(err.message); }
+}
+
+async function sendChatMessage() {
+  const input = document.getElementById("chat-user-input");
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = "";
+  const language = sessionStorage.getItem("medikiosk_chat_language") || "en";
+  appendChatBubble("PATIENT", text, false, null);
+  const container = document.getElementById("chat-messages-container");
+  const typingBubble = document.createElement("div");
+  typingBubble.id = "typing-indicator";
+  typingBubble.className = "chat-bubble ai";
+  typingBubble.innerHTML = `<em>My Pre-Consultation Bot is thinking...</em>`;
+  container.appendChild(typingBubble);
+  scrollChatBottom();
+  try {
+    const res = await fetch("/api/chat/message", { method:"POST", headers:getAuthHeaders(), body:JSON.stringify({conversation_id:state.activeConversationId,message:text,language,care_path:state.carePath || null}) });
+    const data = await res.json();
+    const ti = document.getElementById("typing-indicator"); if (ti) ti.remove();
+    if (!res.ok) throw new Error(data.detail || `Assistant request failed (${res.status})`);
+    state.activeConversationId = data.conversation_id;
+    appendChatBubble("AI", data.reply, data.is_emergency, data.ai_message_id || null);
+    if (state.voiceAssistance) speakText(data.reply, language);
+    if (data.action === "ask_submit") {
+      setTimeout(() => {
+        if (confirm("Your AI assistant has enough information for the doctor. Would you like to submit the summary?")) generateStructuredOverview();
+      }, 250);
+    } else if (data.action === "end" || data.action === "distraction") {
+      input.disabled = true;
+    }
+    // Reload so the new patient message receives its database id for Edit/Delete.
+    setTimeout(loadChatHistory, 100);
+  } catch (err) {
+    const ti = document.getElementById("typing-indicator"); if (ti) ti.remove();
+    appendChatBubble("AI", `I couldn't connect to my AI service right now. ${err.message || "Please try again."}`, false, null);
+  }
+}
+
+function skipQuestion() {
+  const input = document.getElementById("chat-user-input");
+  input.value = "I would prefer to skip this question.";
+  sendChatMessage();
+}
+
+function stopChat() {
+  if (confirm("Would you like to finish this intake conversation and generate your structured medical summary for the doctor?")) {
+    generateStructuredOverview();
+  }
+}
+
+function onLanguageChange() {
+  const langSelect = document.getElementById("chat-language-select");
+  const language = langSelect ? langSelect.value : "en";
+  setChatLanguage(language);
+  applySiteLanguage(language);
+  const selectedLang = langSelect.options[langSelect.selectedIndex].text;
+  showToast(`Language set to ${selectedLang}. New bot responses will use this language.`);
+}
+
+function scrollChatBottom() {
+  const container = document.getElementById("chat-messages-container");
+  if (container) {
+    container.scrollTop = container.scrollHeight;
+  }
+}
+
+// ================= GENERATE STRUCTURED OVERVIEW =================
+async function generateStructuredOverview() {
+  showToast("Preparing your structured summary...");
+  try {
+    const res = await fetch("/api/chat/generate-overview", {
+      method: "POST",
+      headers: getAuthHeaders(),
+      body: JSON.stringify({ conversation_id: state.activeConversationId })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Failed to generate summary");
+
+    state.latestGeneratedOverview = data;
+    renderStructuredOverview(data.structured_overview);
+    showView("view-ai-overview");
+    showToast("Structured overview created successfully!");
+  } catch (err) {
+    alert(`Could not generate overview: ${err.message}`);
+  }
+}
+
+function renderStructuredOverview(ov) {
+  document.getElementById("overview-timestamp").textContent = `Generated: ${new Date().toLocaleString()}`;
+  const set = (id, value, fallback = "Not reported") => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value || fallback;
+  };
+  const clean = arr => (Array.isArray(arr) ? arr : []).filter(x => x && String(x).trim());
+  const showList = (sectionId, listId, items) => {
+    const section = document.getElementById(sectionId);
+    const list = document.getElementById(listId);
+    if (!section || !list) return;
+    list.innerHTML = "";
+    items.forEach(item => { const li = document.createElement("li"); li.textContent = item; list.appendChild(li); });
+    section.style.display = items.length ? "block" : "none";
+  };
+
+  set("overview-chief", ov.chief_complaint);
+  set("overview-duration-severity", ov.duration, "Not reported");
+  set("overview-current-status", ov.current_status, "Not reported");
+  set("overview-temperature", ov.temperature, "Not reported");
+  showList("overview-symptoms-section", "overview-symptoms-list", clean(ov.symptoms));
+  showList("overview-associated-section", "overview-associated-list", clean(ov.associated_findings));
+  showList("overview-conditions-section", "overview-conditions-list", clean(ov.existing_conditions));
+
+  const meds = clean(ov.medications), allergies = clean(ov.allergies);
+  const carePref = String(ov.care_preference || "").trim();
+  const carePrefEl = document.getElementById("overview-care-preference");
+  if (carePrefEl) carePrefEl.textContent = carePref && carePref !== "Not reported" ? `🩺 Appointment type: ${carePref}` : "";
+
+  const ayurvedicMeds = clean(ov.ayurvedic_medicines);
+  const ayurvedicPractitioner = String(ov.ayurvedic_practitioner || "").trim();
+  const dietLifestyle = clean(ov.diet_lifestyle_context);
+  const ayurvedaSection = document.getElementById("overview-ayurveda-section");
+  if (ayurvedaSection && (ayurvedicMeds.length || (ayurvedicPractitioner && ayurvedicPractitioner.toLowerCase() !== "not reported") || dietLifestyle.length)) {
+    ayurvedaSection.style.display = "block";
+    document.getElementById("overview-ayurvedic-medicines").textContent = `Ayurvedic / herbal products: ${ayurvedicMeds.length ? ayurvedicMeds.join(", ") : "None reported"}`;
+    document.getElementById("overview-ayurvedic-practitioner").textContent = `Ayurvedic practitioner: ${ayurvedicPractitioner || "Not reported"}`;
+    document.getElementById("overview-diet-lifestyle").textContent = `Diet / lifestyle context: ${dietLifestyle.length ? dietLifestyle.join("; ") : "Not reported"}`;
+  } else if (ayurvedaSection) {
+    ayurvedaSection.style.display = "none";
+  }
+
+  const medsSection = document.getElementById("overview-meds-section");
+  if (meds.length || allergies.length) {
+    medsSection.style.display = "block";
+    set("overview-medications", meds.join(", "), "None reported");
+    set("overview-allergies", allergies.join(", "), "No known allergies");
+  } else {
+    medsSection.style.display = "none";
+  }
+
+  set("overview-summary-text", ov.ai_summary, "No additional clinician brief was generated.");
+
+  const warnings = clean(ov.warnings);
+  const warningBox = document.getElementById("overview-warning-box");
+  const warningText = document.getElementById("overview-warnings-text");
+  if (warnings.length) {
+    warningBox.style.display = "flex";
+    warningText.textContent = warnings.join(" ");
+  } else {
+    warningBox.style.display = "none";
+  }
+}
+
+// ================= MEDICAL HISTORY TIMELINE =================
+function openMedicalHistory() {
+  showView("view-medical-history");
+  loadMedicalHistory();
+}
+
+async function loadMedicalHistory() {
+  const container = document.getElementById("history-timeline-container");
+  container.innerHTML = "<p>Loading medical timeline...</p>";
+
+  try {
+    const res = await fetch("/api/patient/history", { headers: getAuthHeaders() });
+    const data = await res.json();
+
+    if (!data.records || data.records.length === 0) {
+      container.innerHTML = `
+        <div class="card" style="text-align: center; padding: 36px;">
+          <h4>No medical records recorded yet.</h4>
+          <p style="color: var(--text-muted); margin-top: 6px;">
+            Talk to My Pre-Consultation Bot or upload medical documents to begin building your verified history.
+          </p>
+          <button class="btn btn-primary" style="margin-top: 16px;" onclick="openAIChat()">💬 Start Intake</button>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = "";
+    data.records.forEach(rec => {
+      container.appendChild(createTimelineRecordCard(rec));
+    });
+  } catch (err) {
+    container.innerHTML = `<p style="color: red;">Error loading history: ${err.message}</p>`;
+  }
+}
+
+function createTimelineRecordCard(rec) {
+  const item = document.createElement("div");
+  item.className = "timeline-item";
+
+  const dot = document.createElement("div");
+  dot.className = `timeline-dot ${rec.is_verified ? "verified" : ""}`;
+  item.appendChild(dot);
+
+  const card = document.createElement("div");
+  card.className = "card";
+  card.style.margin = "0 0 16px 0";
+
+  let badgeHtml = "";
+  if (rec.source === "DOCTOR_VERIFIED") {
+    badgeHtml = `<span class="badge badge-doctor-verified">✓ VERIFIED BY DOCTOR</span>`;
+  } else if (rec.source === "AI_GENERATED") {
+    badgeHtml = `<span class="badge badge-ai-generated">AI_GENERATED</span>`;
+  } else if (rec.source === "DOCUMENT_EXTRACTED") {
+    badgeHtml = `<span class="badge badge-document-extracted">DOCUMENT_EXTRACTED</span>`;
+  } else {
+    badgeHtml = `<span class="badge badge-patient-reported">PATIENT_REPORTED</span>`;
+  }
+
+  let doctorVerifiedNote = "";
+  if (rec.is_verified && rec.doctor_name) {
+    doctorVerifiedNote = `
+      <div style="margin-top: 8px; font-size: 0.9rem; color: var(--verified-color); font-weight: 700;">
+        ✓ Verified by ${rec.doctor_name} (${rec.specialization || "Clinician"})
+      </div>
+    `;
+  }
+
+  card.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+      ${badgeHtml}
+      <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted);">${rec.date_recorded}</span>
+    </div>
+    <h3 style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 6px;">${escapeHtml(rec.title)}</h3>
+    <p style="color: var(--text-main); line-height: 1.5; white-space: pre-line;">${escapeHtml(rec.content)}</p>
+    ${doctorVerifiedNote}
+  `;
+
+  item.appendChild(card);
+  return item;
+}
+
+// ================= DOCUMENTS & EXTRACTION =================
+function openDocuments() {
+  showView("view-documents");
+  loadDocuments();
+}
+
+async function loadDocuments() {
+  const container = document.getElementById("documents-list-container");
+  container.innerHTML = "<p>Loading documents...</p>";
+
+  try {
+    const res = await fetch("/api/documents/list", { headers: getAuthHeaders() });
+    const data = await res.json();
+
+    if (!data.documents || data.documents.length === 0) {
+      container.innerHTML = `
+        <div class="card" style="text-align: center; padding: 24px;">
+          <p style="color: var(--text-muted);">No documents uploaded yet. Upload a lab or hospital report above.</p>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = "";
+    data.documents.forEach(doc => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const ext = doc.extracted_data || {};
+      const findingsList = (ext.test_values_or_findings || []).map(f => `<li>${escapeHtml(f)}</li>`).join("");
+
+      card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+          <span class="badge badge-document-extracted">DOCUMENT EXTRACTED</span>
+          <span style="font-size: 0.9rem; color: var(--text-muted);">Uploaded: ${new Date(doc.uploaded_at).toLocaleDateString()}</span>
+        </div>
+        <h4 style="font-size: 1.2rem; color: var(--primary-dark);">${escapeHtml(doc.file_name)}</h4>
+        <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; padding: 14px; margin-top: 10px; font-size: 0.95rem;">
+          <div style="font-weight: 700; color: #854d0e; margin-bottom: 6px;">🤖 AI Document Processing Status:</div>
+          <div><strong>Test/Report:</strong> ${escapeHtml(ext.test_or_report_name || doc.file_name)}</div>
+          <div><strong>Clinic/Doctor:</strong> ${escapeHtml(ext.doctor_or_hospital_name || "Hospital")}</div>
+          <div style="margin-top: 6px;"><strong>Findings & Values:</strong></div>
+          <ul style="padding-left: 20px; margin-top: 4px;">${findingsList || "<li>Extracted and cataloged</li>"}</ul>
+          <div style="margin-top: 6px;"><strong>Summary:</strong> ${escapeHtml(ext.summary || "Preserved in records.")}</div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  } catch (err) {
+    container.innerHTML = `<p style="color: red;">Error: ${err.message}</p>`;
+  }
+}
+
+async function handleDocumentUpload(e) {
+  e.preventDefault();
+  const fileInput = document.getElementById("doc-file-input");
+  const catSelect = document.getElementById("doc-category-select");
+  const btn = document.getElementById("upload-doc-btn");
+
+  if (!fileInput.files || fileInput.files.length === 0) {
+    alert("Please select a file to upload.");
+    return;
+  }
+
+  const file = fileInput.files[0];
+  const category = catSelect.value;
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("category", category);
+
+  btn.disabled = true;
+  btn.textContent = "⏳ AI is analyzing document...";
+
+  try {
+    const res = await fetch("/api/documents/upload", {
+      method: "POST",
+      headers: { "Authorization": `Bearer ${state.token}` },
+      body: formData
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Upload failed");
+
+    showToast("Document analyzed & added as DOCUMENT_EXTRACTED!");
+    fileInput.value = "";
+    loadDocuments();
+  } catch (err) {
+    alert(`Document Processing Error: ${err.message}`);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "📤 Upload Medical Document";
+  }
+}
+
+// ================= APPOINTMENTS (PATIENT) =================
+function updateAppointmentCarePathLabel() {
+  const el = document.getElementById("appt-care-path-label");
+  if (!el) return;
+  el.textContent = state.carePath === "AYURVEDIC" ? "🌿 Ayurvedic" : "💊 Allopathic";
+}
+async function openAppointmentsWithOverview() {
+  showView("view-appointments");
+  updateAppointmentCarePathLabel();
+  const overview = state.latestGeneratedOverview && state.latestGeneratedOverview.structured_overview;
+  const reason = document.getElementById("appt-reason-input");
+  if (reason && overview) {
+    const parts = [];
+    if (overview.chief_complaint) parts.push(`Chief complaint: ${overview.chief_complaint}`);
+    if (overview.duration && overview.duration !== "Not clearly reported") parts.push(`Duration: ${overview.duration}`);
+    if (overview.current_status && overview.current_status !== "Not clearly reported") parts.push(`Current status: ${overview.current_status}`);
+    if (overview.temperature && overview.temperature !== "Not reported") parts.push(`Temperature: ${overview.temperature}`);
+    if (Array.isArray(overview.symptoms) && overview.symptoms.length) parts.push(`Symptoms: ${overview.symptoms.join(", ")}`);
+    if (Array.isArray(overview.associated_findings) && overview.associated_findings.length) parts.push(`Relevant findings: ${overview.associated_findings.join(", ")}`);
+    if (overview.ai_summary) parts.push(`Clinician brief: ${overview.ai_summary}`);
+    reason.value = parts.join("\n");
+  }
+  await loadHospitalList();
+  await loadRecommendedDoctors();
+  await loadMyAppointments();
+  showToast(overview ? "Doctors are filtered to specialties related to your AI medical overview." : "Choose a hospital to see doctors.");
+}
+
+function openAppointments() {
+  showView("view-appointments");
+  updateAppointmentCarePathLabel();
+  loadHospitalList().then(loadRecommendedDoctors);
+  loadMyAppointments();
+}
+
+async function loadHospitalList() {
+  const select = document.getElementById("appt-hospital-select");
+  if (!select) return;
+  try {
+    const res = await fetch("/api/hospitals/list");
+    const data = await res.json();
+    const current = select.value;
+    select.innerHTML = '<option value="">Choose a hospital...</option>';
+    (data.hospitals || []).forEach(h => {
+      const opt = document.createElement("option"); opt.value = h; opt.textContent = h; select.appendChild(opt);
+    });
+    if (current && (data.hospitals || []).includes(current)) select.value = current;
+    if (!select.value && data.hospitals && data.hospitals.length) select.value = data.hospitals[0];
+  } catch (err) { console.error("Hospital load error:", err); }
+}
+
+async function onHospitalSelectChange() { await loadRecommendedDoctors(); }
+
+async function loadRecommendedDoctors() {
+  const select = document.getElementById("appt-doctor-select");
+  const hospital = document.getElementById("appt-hospital-select")?.value || "";
+  if (!select) return;
+  const overview = state.latestGeneratedOverview?.structured_overview || null;
+  try {
+    if (!overview) {
+      const res = await fetch("/api/doctors/list");
+      const data = await res.json();
+      const doctors = (data.doctors || []).filter(d => !hospital || d.hospital_affiliation === hospital);
+      renderDoctorOptions(doctors, false);
+      return;
+    }
+    const res = await fetch("/api/doctors/recommend", {
+      method: "POST", headers: getAuthHeaders(),
+      body: JSON.stringify({ overview, hospital })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Could not recommend doctors");
+    renderDoctorOptions(data.doctors || [], true, data.specialties || []);
+  } catch (err) {
+    console.error("Doctor recommendation error:", err);
+    select.innerHTML = '<option value="">No recommended doctors available</option>';
+    const note = document.getElementById("doctor-recommendation-note");
+    if (note) note.textContent = "Could not load recommendations. Please choose another hospital or try again.";
+  }
+}
+
+function renderDoctorOptions(doctors, recommended, specialties=[]) {
+  const select = document.getElementById("appt-doctor-select");
+  if (!select) return;
+  select.innerHTML = '<option value="">Choose a doctor...</option>';
+  doctors.forEach(d => {
+    const opt = document.createElement("option");
+    opt.value = d.id;
+    opt.textContent = `${d.full_name} — ${d.specialization}${recommended ? " ✓ Recommended" : ""}`;
+    select.appendChild(opt);
+  });
+  const note = document.getElementById("doctor-recommendation-note");
+  if (note) {
+    if (recommended) note.textContent = doctors.length
+      ? `✓ AI overview matched: ${specialties.join(", ")}. Only related doctors are shown.`
+      : "No specialist matched this hospital. Try another hospital.";
+    else note.textContent = "Select a hospital. Doctors will be listed for that hospital.";
+  }
+}
+
+async function loadDoctorsList() { await loadRecommendedDoctors(); }
+
+function onDoctorSelectChange() {
+  // Reserved for future real-time doctor-specific slot availability.
+}
+
+async function handleAppointmentRequest(e) {
+  e.preventDefault();
+  const doctor_id = parseInt(document.getElementById("appt-doctor-select").value);
+  const appointment_date = document.getElementById("appt-date-input").value;
+  const time_slot = document.getElementById("appt-slot-select").value;
+  const reason_for_visit = document.getElementById("appt-reason-input").value.trim();
+  const share_summary = document.getElementById("appt-share-summary").checked;
+
+  if (!doctor_id) {
+    alert("Please select a doctor.");
+    return;
+  }
+
+  try {
+    const res = await fetch("/api/appointments/request", {
+      method: "POST",
+      headers: getAuthHeaders(),
+      body: JSON.stringify({
+        doctor_id, appointment_date, time_slot, reason_for_visit, share_summary, care_path: state.carePath || "ALLOPATHIC"
+      })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Request failed");
+
+    showToast("Appointment requested! Doctor will review your shared overview.");
+    document.getElementById("appt-reason-input").value = "";
+    await clearChatAfterBooking();
+    loadMyAppointments();
+  } catch (err) {
+    alert(`Booking Error: ${err.message}`);
+  }
+}
+
+async function clearChatAfterBooking() {
+  try {
+    const res = await fetch("/api/chat/clear", {
+      method: "POST",
+      headers: getAuthHeaders()
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Could not clear chat");
+
+    const container = document.getElementById("chat-messages-container");
+    if (container) container.innerHTML = "";
+    state.activeConversationId = null;
+    state.latestGeneratedOverview = null;
+    state.carePath = null;
+    sessionStorage.removeItem("medikiosk_care_path");
+    const input = document.getElementById("chat-user-input");
+    if (input) input.value = "";
+    showToast("Private intake chat cleared after booking. Your medical summary remains available to the doctor.");
+  } catch (err) {
+    console.warn("Chat cleanup after booking failed:", err);
+    // Booking already succeeded; do not tell the patient the appointment failed.
+    // The next chat session will be reset when the server creates a new conversation.
+  }
+}
+
+async function loadMyAppointments() {
+  const container = document.getElementById("patient-appointments-list");
+  container.innerHTML = "<p>Loading appointments...</p>";
+
+  try {
+    const res = await fetch("/api/appointments/my", { headers: getAuthHeaders() });
+    const data = await res.json();
+
+    if (!data.appointments || data.appointments.length === 0) {
+      container.innerHTML = `<p style="color: var(--text-muted);">No consultation requests submitted yet.</p>`;
+      return;
+    }
+
+    container.innerHTML = "";
+    data.appointments.forEach(a => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      let statusBadge = "";
+      if (a.status === "ACCEPTED") {
+        statusBadge = `<span class="badge badge-doctor-verified">✓ CONFIRMED BY DOCTOR</span>`;
+      } else if (a.status === "REJECTED") {
+        statusBadge = `<span class="badge" style="background:#fee2e2; color:#dc2626; border:1px solid #dc2626;">DECLINED</span>`;
+      } else {
+        statusBadge = `<span class="badge badge-patient-reported">⏳ PENDING REVIEW</span>`;
+      }
+
+      card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h4 style="font-size: 1.25rem;">${escapeHtml(a.doctor_name)}</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">${escapeHtml(a.specialization)} &bull; ${escapeHtml(a.hospital_affiliation)}</p>
+            <div style="margin-top: 8px; font-weight: 700;">
+              ${a.care_path === "AYURVEDIC" ? "🌿 Ayurvedic" : "💊 Allopathic"} &bull; 📅 Date: ${a.appointment_date} &bull; ⏰ Time: ${a.time_slot}
+            </div>
+            <p style="margin-top: 6px;"><strong>Reason:</strong> ${escapeHtml(a.reason_for_visit)}</p>
+            ${a.doctor_notes ? `<div style="margin-top: 6px; color: var(--teal-hover); font-weight: 600;">👨‍⚕️ Doctor note: ${escapeHtml(a.doctor_notes)}</div>` : ""}
+          </div>
+          <div>${statusBadge}</div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  } catch (err) {
+    container.innerHTML = `<p style="color: red;">Error: ${err.message}</p>`;
+  }
+}
+
+// ================= DOCTOR DASHBOARD & CLINICAL PORTAL =================
+async function loadDoctorDashboard() {
+  try {
+    const res = await fetch("/api/doctor/dashboard", { headers: getAuthHeaders() });
+    if (res.status === 401) { handleLogout(); return; }
+    const data = await res.json();
+
+    const greeting = document.getElementById("doctor-greeting");
+    if (greeting) greeting.textContent = `${data.doctor_name}`;
+
+    // Counters
+    document.getElementById("pending-count").textContent = (data.pending_appointments || []).length;
+    document.getElementById("today-count").textContent = (data.today_appointments || []).length;
+    document.getElementById("shared-count").textContent = (data.shared_patients || []).length;
+
+    renderDoctorPending(data.pending_appointments);
+    renderDoctorToday(data.today_appointments);
+    renderDoctorSharedPatients(data.shared_patients);
+    renderDoctorUpdates(data.recent_updates);
+  } catch (err) {
+    console.error("Doctor dashboard error:", err);
+  }
+}
+
+function switchDoctorTab(tab) {
+  const tabs = ["pending", "today", "patients", "updates"];
+  tabs.forEach(t => {
+    const btn = document.getElementById(`tab-doc-${t}`);
+    const pane = document.getElementById(`pane-doc-${t}`);
+    if (btn) btn.classList.toggle("active", t === tab);
+    if (pane) pane.style.display = (t === tab) ? "block" : "none";
+  });
+}
+
+function renderDoctorPending(appts) {
+  const container = document.getElementById("pane-doc-pending");
+  if (!appts || appts.length === 0) {
+    container.innerHTML = `
+      <div class="card" style="text-align: center; padding: 24px;">
+        <p style="color: var(--text-muted);">No pending consultation requests.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = "";
+  appts.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <h3 style="font-size: 1.3rem;">${escapeHtml(a.patient_name)}</h3>
+            <span class="badge badge-patient-reported">Blood Group: ${a.blood_group || "B+"}</span>
+          </div>
+          <div style="margin-top: 6px; font-weight: 700;">
+            📅 Requested: ${a.appointment_date} at ⏰ ${a.time_slot}
+          </div>
+          <p style="margin-top: 6px;"><strong>Patient Reason:</strong> ${escapeHtml(a.reason_for_visit)}</p>
+          <div style="margin-top: 10px; display: flex; gap: 10px;">
+            <button class="btn btn-secondary" onclick="openDoctorPatientChart(${a.patient_id})">
+              📋 View Patient Overview & History
+            </button>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-teal" onclick="respondAppointment(${a.id}, 'ACCEPTED')">
+            ✓ Accept
+          </button>
+          <button class="btn btn-secondary" style="color: #dc2626;" onclick="respondAppointment(${a.id}, 'REJECTED')">
+            ✕ Decline
+          </button>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderDoctorToday(appts) {
+  const container = document.getElementById("pane-doc-today");
+  if (!appts || appts.length === 0) {
+    container.innerHTML = `
+      <div class="card" style="text-align: center; padding: 24px;">
+        <p style="color: var(--text-muted);">No consultations scheduled for today.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = "";
+  appts.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h3 style="font-size: 1.3rem;">${escapeHtml(a.patient_name)}</h3>
+          <p style="font-weight: 700; color: var(--teal-hover);">⏰ Time Slot: ${a.time_slot}</p>
+          <p style="color: var(--text-muted);">${escapeHtml(a.reason_for_visit)}</p>
+        </div>
+        <div>
+          <button class="btn btn-teal btn-large" onclick="openDoctorPatientChart(${a.patient_id})">
+            🏥 Start Consultation
+          </button>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderDoctorSharedPatients(patients) {
+  const container = document.getElementById("pane-doc-patients");
+  if (!patients || patients.length === 0) {
+    container.innerHTML = `
+      <div class="card" style="text-align: center; padding: 24px;">
+        <p style="color: var(--text-muted);">No patients have shared their records yet.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = "";
+  patients.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h3 style="font-size: 1.3rem;">${escapeHtml(p.patient_name)}</h3>
+          <p style="color: var(--text-muted);">
+            Gender: ${p.gender || "Not specified"} &bull; Blood Group: ${p.blood_group || "Unknown"} &bull; Phone: ${p.phone || "N/A"}
+          </p>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Shared access granted: ${new Date(p.granted_at).toLocaleDateString()}</span>
+        </div>
+        <button class="btn btn-primary" onclick="openDoctorPatientChart(${p.patient_id})">
+          📋 Open Clinical Chart
+        </button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderDoctorUpdates(updates) {
+  const container = document.getElementById("pane-doc-updates");
+  if (!updates || updates.length === 0) {
+    container.innerHTML = `<div class="card"><p style="color: var(--text-muted);">No recent updates.</p></div>`;
+    return;
+  }
+
+  container.innerHTML = "";
+  updates.forEach(u => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <strong>${escapeHtml(u.patient_name)}</strong> - <span style="color: var(--primary-dark);">${escapeHtml(u.title)}</span>
+          <div style="font-size: 0.9rem; color: var(--text-muted);">${u.date_recorded}</div>
+        </div>
+        <button class="btn btn-secondary" style="min-height: 36px; padding: 4px 12px; font-size: 0.9rem;" onclick="openDoctorPatientChart(${u.patient_id})">
+          View Chart
+        </button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+async function respondAppointment(apptId, status) {
+  const notes = prompt(`Optional note for the patient upon ${status.toLowerCase()}ing:`, status === "ACCEPTED" ? "Appointment confirmed. Please arrive 10 mins early." : "");
+  try {
+    const res = await fetch(`/api/doctor/appointment/${apptId}/status`, {
+      method: "POST",
+      headers: getAuthHeaders(),
+      body: JSON.stringify({ status, doctor_notes: notes })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Status update failed");
+    showToast(data.message);
+    loadDoctorDashboard();
+  } catch (err) {
+    alert(`Action Error: ${err.message}`);
+  }
+}
+
+// ================= DOCTOR PATIENT CHART VIEW =================
+async function openDoctorPatientChart(patientId) {
+  state.currentChartPatientId = patientId;
+  showView("view-doctor-patient-chart");
+
+  try {
+    const res = await fetch(`/api/doctor/patient/${patientId}`, { headers: getAuthHeaders() });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Failed to load patient chart");
+
+    // Header Demographics
+    const p = data.patient;
+    document.getElementById("chart-patient-name").textContent = p.full_name;
+    document.getElementById("chart-patient-meta").textContent = `
+      Blood Group: ${p.blood_group || "N/A"} • Gender: ${p.gender || "N/A"} • Phone: ${p.phone || "N/A"} • Emergency: ${p.emergency_contact || "N/A"}
+    `;
+
+    // 1. Patient Overview First
+    const ai = data.latest_ai_summary?.structured_data || {};
+    document.getElementById("chart-reason-visit").textContent = ai.chief_complaint || "Patient clinical review";
+    document.getElementById("chart-duration-severity").textContent = `${ai.duration || "Reported"} (${ai.severity || "Moderate"})`;
+
+    const sympUl = document.getElementById("chart-symptoms-list");
+    sympUl.innerHTML = "";
+    (ai.symptoms || ["Review required with patient"]).forEach(s => {
+      const li = document.createElement("li");
+      li.textContent = s;
+      sympUl.appendChild(li);
+    });
+
+    const histUl = document.getElementById("chart-history-list");
+    histUl.innerHTML = "";
+    (ai.existing_conditions || ["None reported"]).forEach(h => {
+      const li = document.createElement("li");
+      li.textContent = h;
+      histUl.appendChild(li);
+    });
+
+    document.getElementById("chart-medications").textContent = (ai.medications && ai.medications.length) ? ai.medications.join(", ") : "None reported";
+    document.getElementById("chart-allergies").textContent = (ai.allergies && ai.allergies.length) ? ai.allergies.join(", ") : "No known drug allergies";
+
+    // AI-read uploaded documents
+    const docs = data.documents || [];
+    if (docs.length > 0) {
+      document.getElementById("chart-recent-reports").textContent = docs.map(d => `${d.file_name} (${d.category})`).join("; ");
+    } else {
+      document.getElementById("chart-recent-reports").textContent = "No uploaded documents.";
+    }
+    document.getElementById("chart-document-ai-summary").textContent = data.document_ai_summary || "No document summary available.";
+
+    // Raw AI pre block
+    document.getElementById("chart-raw-ai").textContent = JSON.stringify(ai, null, 2);
+
+    // Full Timeline
+    const tlContainer = document.getElementById("chart-timeline-container");
+    tlContainer.innerHTML = "";
+    (data.medical_records || []).forEach(r => {
+      tlContainer.appendChild(createTimelineRecordCard(r));
+    });
+
+    // Documents
+    const docContainer = document.getElementById("chart-documents-container");
+    docContainer.innerHTML = "";
+    docs.forEach(d => {
+      const el = document.createElement("div");
+      el.className = "card";
+      el.innerHTML = `
+        <div style="display: flex; justify-content: space-between;">
+          <strong>${escapeHtml(d.file_name)}</strong>
+          <span class="badge badge-document-extracted">DOCUMENT EXTRACTED</span>
+        </div>
+        <p style="font-size: 0.95rem; margin-top: 6px;">Category: ${escapeHtml(d.category || "OTHER")}</p>
+        <div style="margin-top: 10px; padding: 12px; background: #f8fafc; border-radius: 8px;">
+          <p><strong>Report:</strong> ${escapeHtml(d.extracted_data?.test_or_report_name || d.file_name)}</p>
+          <p><strong>Doctor/Hospital:</strong> ${escapeHtml(d.extracted_data?.doctor_or_hospital_name || "Not reported")}</p>
+          <p><strong>Date:</strong> ${escapeHtml(d.extracted_data?.report_date || "Not reported")}</p>
+          <p style="margin-top: 6px;"><strong>AI Summary:</strong> ${escapeHtml(d.extracted_data?.summary || "No summary available.")}</p>
+          ${(d.extracted_data?.abnormal_findings || []).length ? `<p style="margin-top: 6px;"><strong>Important abnormal findings:</strong> ${escapeHtml(d.extracted_data.abnormal_findings.join("; "))}</p>` : ""}
+          ${(d.extracted_data?.important_points || []).length ? `<p style="margin-top: 6px;"><strong>Important points:</strong> ${escapeHtml(d.extracted_data.important_points.join("; "))}</p>` : ""}
+        </div>
+      `;
+      docContainer.appendChild(el);
+    });
+
+  } catch (err) {
+    alert(`Chart Load Error: ${err.message}`);
+  }
+}
+
+function switchChartSection(sec) {
+  const sections = ["history", "documents", "aisummary"];
+  sections.forEach(s => {
+    const el = document.getElementById(`chart-section-${s}`);
+    if (el) el.style.display = (s === sec) ? "block" : "none";
+  });
+}
+
+function scrollToVerifyRecordForm() {
+  const formCard = document.getElementById("doctor-verify-form-card");
+  if (formCard) formCard.scrollIntoView({ behavior: "smooth" });
+}
+
+function onRecordTypeChange() {
+  const type = document.getElementById("record-type-select").value;
+  document.getElementById("fields-diagnosis").style.display = (type === "DIAGNOSIS") ? "block" : "none";
+  document.getElementById("fields-prescription").style.display = (type === "PRESCRIPTION") ? "block" : "none";
+}
+
+async function handleDoctorAddRecord(e) {
+  e.preventDefault();
+  if (!state.currentChartPatientId) return;
+
+  const record_type = document.getElementById("record-type-select").value;
+  const title = document.getElementById("record-title-input").value.trim();
+  const content = document.getElementById("record-content-input").value.trim();
+
+  const payload = { record_type, title, content };
+
+  if (record_type === "DIAGNOSIS") {
+    payload.diagnosis_condition = document.getElementById("diag-condition-input").value.trim();
+    payload.diagnosis_severity = document.getElementById("diag-severity-select").value;
+  } else if (record_type === "PRESCRIPTION") {
+    payload.medication_name = document.getElementById("rx-med-name").value.trim();
+    payload.medication_dosage = document.getElementById("rx-dosage").value.trim();
+    payload.medication_instructions = document.getElementById("rx-instructions").value.trim();
+  }
+
+  try {
+    const res = await fetch(`/api/doctor/patient/${state.currentChartPatientId}/verify-record`, {
+      method: "POST",
+      headers: getAuthHeaders(),
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail || "Verification failed");
+
+    showToast("✓ Permanently added as DOCTOR VERIFIED record!");
+    // Reset form
+    document.getElementById("record-title-input").value = "";
+    document.getElementById("record-content-input").value = "";
+    // Refresh patient chart
+    openDoctorPatientChart(state.currentChartPatientId);
+  } catch (err) {
+    alert(`Verification Error: ${err.message}`);
+  }
+}
+
+// ================= UTILITIES =================
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function escapeAttr(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/'/g, "\\'")
+    .replace(/\n/g, " ");
+}
+
+function formatMarkdown(text) {
+  if (!text) return "";
+  let html = escapeHtml(text);
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  // Linebreaks
+  html = html.replace(/\n/g, "<br>");
+  return html;
+}
+
+</script>
+</body>
+</html>
